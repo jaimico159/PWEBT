@@ -1,6 +1,6 @@
 <?php
 	require("connect_bd.php");
-
+	
 	$username=$_POST['user'];
 	$pass=$_POST['password'];
 	echo $username;
