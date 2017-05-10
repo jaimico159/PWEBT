@@ -4,7 +4,6 @@
 	$username=$_POST['user'];
 	$pass=$_POST['password'];
 	echo $username;
-	
 	session_start();
 
 	$sql=mysqli_query($link,"SELECT * FROM usuarios WHERE user='$username' ");
