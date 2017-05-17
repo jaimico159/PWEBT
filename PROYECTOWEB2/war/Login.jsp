@@ -66,7 +66,7 @@
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="container">
-  <h2>Ingreso</h2>
+  <h2>Ingreso</h2><br><br><br><br><br><br>
   
   
     <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
@@ -86,6 +86,17 @@
         console.log("ID Token: " + id_token);
       };
     </script>
+    
+    <a href="http://1-dot-profar-167808.appspot.com" onclick="signOut();">Sign out</a>
+<script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
+    
 </div>
       
 
