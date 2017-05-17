@@ -5,6 +5,9 @@
 <html lang="es">
 <head>
     <title>Ingreso</title>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="139878915322-udt6t70orjvs790mgfjph1s8poll1u75.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta charset="utf-8">
     
     <!-- Bootstrap core CSS -->
@@ -64,32 +67,25 @@
       <!-- Main component for a primary marketing message or call to action -->
       <div class="container">
   <h2>Ingreso</h2>
-  <form class="form-horizontal" method="post" action="#">
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="email">Cuenta:</label>
-      <div class="col-sm-10">
-        <input type="email" class="form-control" id="email" placeholder="Enter email">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Contraseña:</label>
-      <div class="col-sm-10">          
-        <input type="password" class="form-control" id="pwd" placeholder="Enter password">
-      </div>
-    </div>
-    <div class="form-group">        
-      <div class="col-sm-offset-2 col-sm-10">
-        <div class="checkbox">
-          <label><input type="checkbox"> Recordarme</label>
-        </div>
-      </div>
-    </div>
-    <div class="form-group">        
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default">Entrar</button>
-      </div>
-    </div>
-  </form>
+  
+  
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    <script>
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+      };
+    </script>
 </div>
       
 
