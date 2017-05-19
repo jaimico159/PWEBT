@@ -13,7 +13,7 @@ import com.google.appengine.api.users.UserServiceFactory;
 
 @SuppressWarnings("serial")
 public class GmailServlet extends HttpServlet {
- public void doGet(HttpServletRequest req, HttpServletResponse resp)
+ public void doPost(HttpServletRequest req, HttpServletResponse resp)
  throws IOException {
 	 resp.setContentType("text/html");
  
@@ -21,9 +21,8 @@ public class GmailServlet extends HttpServlet {
  
 	 UserService us = UserServiceFactory.getUserService();
 	 User user = us.getCurrentUser();
- 	
 	 if(user == null){
-		 resp.sendRedirect(us.createLoginURL(req.getRequestURI()));
+		 resp.sendRedirect(us.createLoginURL("http://1-dot-profar-167808.appspot.com/Login.jsp"));
  	}else{
 		 out.println("<!DOCTYPE html>"	 
 		 + "<html>"
@@ -44,8 +43,9 @@ public class GmailServlet extends HttpServlet {
 		 +"<br/>isUserLoggedIn retornó : "+us.isUserLoggedIn()
 		 +"<br/>getCurrentUser retornó : "+us.getCurrentUser()
 		 +"<br/>"
-		 +"<a href='"+ us.createLogoutURL(req.getRequestURI())+"'> Cerrar sesión </a>"
+		 +"<a href='"+ us.createLogoutURL("http://1-dot-profar-167808.appspot.com")+"'> Cerrar sesión </a>"
 		 + "</body></html>");
+		 
  	}
  }
 }

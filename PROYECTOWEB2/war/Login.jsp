@@ -8,6 +8,10 @@
     <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="139878915322-udt6t70orjvs790mgfjph1s8poll1u75.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
     <meta charset="utf-8">
     
     <!-- Bootstrap core CSS -->
@@ -66,11 +70,11 @@
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="container">
-  <h2>Ingreso</h2><br><br><br><br><br><br>
+  <h2>Ingreso</h2>
   
   
     <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-    <script>
+    <script type="text/javascript" >
       function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
         var profile = googleUser.getBasicProfile();
@@ -84,9 +88,20 @@
         // The ID token you need to pass to your backend:
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
+        var redirectUrl = '/gmail';
+
+        //using jquery to post data dynamically
+        var form = $('<form action="' + redirectUrl + '" method="post">' +
+                         '<input type="text" name="id_token" value="' +
+                          googleUser.getAuthResponse().id_token + '" />' +
+                                                               '</form>');
+        $('body').append(form);
+        form.submit();
       };
     </script>
+   
     
+    <br><br><br><br><br><br>
     <a href="http://1-dot-profar-167808.appspot.com" onclick="signOut();">Sign out</a>
 <script>
   function signOut() {
