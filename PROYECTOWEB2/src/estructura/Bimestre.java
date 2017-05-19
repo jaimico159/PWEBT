@@ -3,6 +3,16 @@ package estructura;
 public class Bimestre {
 	private Ciencias C1,C2,C3,C4;
 	private Letras L1,L2,L3,L4;
+	public Bimestre(){
+		C1=null;
+		C2=null;
+		C3=null;
+		C4=null;
+		L1=null;
+		L2=null;
+		L3=null;
+		L4=null;
+	}
 	public Bimestre(Ciencias c1, Ciencias c2, Ciencias c3, Ciencias c4, Letras l1, Letras l2, Letras l3, Letras l4) {
 		super();
 		C1 = c1;
@@ -61,6 +71,11 @@ public class Bimestre {
 	}
 	public void setL4(Letras l4) {
 		L4 = l4;
+	}
+	@Override
+	public String toString() {
+		return "Bimestre [C1=" + C1 + ", C2=" + C2 + ", C3=" + C3 + ", C4=" + C4 + ", L1=" + L1 + ", L2=" + L2 + ", L3="
+				+ L3 + ", L4=" + L4 + "]";
 	}
 	
 	

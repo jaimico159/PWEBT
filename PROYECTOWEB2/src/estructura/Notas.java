@@ -11,6 +11,10 @@ public class Notas {
 		B4 = b4;
 	}
 
+	public Notas() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Bimestre getB1() {
 		return B1;
 	}
@@ -42,5 +46,12 @@ public class Notas {
 	public void setB4(Bimestre b4) {
 		B4 = b4;
 	}
+
+	@Override
+	public String toString() {
+		return ""+B1 + B2 + B3 +B4;
+	}
+	
+	
 	
 }
