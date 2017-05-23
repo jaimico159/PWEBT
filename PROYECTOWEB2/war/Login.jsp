@@ -72,7 +72,18 @@
       <div class="container">
   <h2>Ingreso</h2>
   
-  
+  <form action="" method="post">
+  <div class="form-group">
+    <label for="email">Correo :</label>
+    <input type="text" class="form-control" id="email">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control" id="pwd">
+  </div>
+  <button type="submit" class="btn btn-default">Entrar</button>
+</form>
+  <br>
     <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
     <script type="text/javascript" >
       function onSignIn(googleUser) {
