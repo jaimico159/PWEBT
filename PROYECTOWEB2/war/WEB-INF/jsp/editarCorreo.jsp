@@ -75,15 +75,10 @@
 
 		<!-- Main component for a primary marketing message or call to action -->
 		<div class="container"></div>
-		
-			
+			<jsp:include page="../formularios/formSearchCorreo.html"></jsp:include>
 
 	</div>
-		<br><h3>AGREGAR CORREO</h3>
-		<jsp:include page="../formularios/formAddCorreo.html"></jsp:include>
-		
-		<br><br><br><br><h3>MODIFICAR CORREO</h3>
-		<jsp:include page="../formularios/formSearchCorreo.jsp"></jsp:include>
+	
 </body>
 
 </html>

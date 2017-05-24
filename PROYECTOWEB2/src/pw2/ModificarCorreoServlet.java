@@ -5,11 +5,12 @@ import java.io.IOException;
 import javax.servlet.http.*;
 
 @SuppressWarnings("serial")
-public class AddCorreoServlet extends HttpServlet {
+public class ModificarCorreoServlet extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-		String correo=req.getParameter("correo"),tipo=req.getParameter("tipo");
+		String correo=req.getParameter("correo"),tipo=req.getParameter("tipo"),co = req.getParameter("co");
 		boolean condicion=Boolean.parseBoolean(req.getParameter("condicion"));
-		CorreoUtilidades.agregar(correo,tipo,condicion);
+		CorreoUtilidades.ModificarCorreo(CorreoUtilidades.buscarCorreo(CorreoUtilidades.getEntries(), co), correo, tipo, condicion);
+		
 		resp.setContentType("text/html");	
 		
 		resp.getWriter().println("<!DOCTYPE html>"	 

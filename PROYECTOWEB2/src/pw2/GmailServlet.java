@@ -35,7 +35,7 @@ public class GmailServlet extends HttpServlet {
 		}
 		else{
 			System.out.println(user.getEmail());
-			if(user.getEmail().equals("jaime.huarsaya.rivera@gmail.com")){
+			if(user.getEmail().equals("jaimehuarsayarivera@gmail.com") | user.getEmail().equals("jaime.huarsaya.rivera@gmail.com")){
 				req.getRequestDispatcher("/WEB-INF/jsp/adminoptions.jsp").forward(req, resp);
 			}else
 			if(lista.isEmpty()){
@@ -57,8 +57,9 @@ public class GmailServlet extends HttpServlet {
 									+"<br/><b>User :</b>"
 									+"<br/>Nickname: "+user.getNickname()
 									+"<br/>Email: "+user.getEmail()
-									+"<br/><img src='rey.jpg'> "
+									+"<br/><img src='imagenes/rey.jpg'> "
 									+"<br/>"
+									+"<br/><a href='/adminoptions'> Opciones de administrador</a>"
 									+"<br/><a href='/adminoptions'> Opciones de administrador</a>"
 									+"<a href='"+ us.createLogoutURL("http://1-dot-profar-167808.appspot.com")+"'> Cerrar sesión </a>"
 									+ "</body></html>");
@@ -79,7 +80,7 @@ public class GmailServlet extends HttpServlet {
 									+"<br/><b>User :</b>"
 									+"<br/>getNickname retornó : "+user.getNickname()
 									+"<br/>getEmail retornó : "+user.getEmail()
-									+"<br/><img src='rey.jpg'> "
+									+"<br/><img src='imagenes/peon.jpg'> "
 									+"<br/>"
 									+"<a href='"+ us.createLogoutURL("http://1-dot-profar-167808.appspot.com")+"'> Cerrar sesión </a>"
 									+ "</body></html>");
@@ -102,7 +103,7 @@ public class GmailServlet extends HttpServlet {
 									+"<br/><b>User :</b>"
 									+"<br/>getNickname retornó : "+user.getNickname()
 									+"<br/>getEmail retornó : "+user.getEmail()
-									+"<br/><img src='rey.jpg'> "
+									+"<br/><img src='imagenes/torre.jpg'> "
 									+"<br/>"
 									+"<a href='"+ us.createLogoutURL("http://1-dot-profar-167808.appspot.com")+"'> Cerrar sesión </a>"
 									+ "</body></html>");
@@ -125,7 +126,7 @@ public class GmailServlet extends HttpServlet {
 									+"<br/><b>User :</b>"
 									+"<br/>getNickname retornó : "+user.getNickname()
 									+"<br/>getEmail retornó : "+user.getEmail()
-									+"<br/><img src='rey.jpg'> "
+									+"<br/><img src='imagenes/reina.jpg'> "
 									+"<br/>"
 									+"<a href='"+ us.createLogoutURL("http://1-dot-profar-167808.appspot.com")+"'> Cerrar sesión </a>"
 									+ "</body></html>");
@@ -149,7 +150,7 @@ public class GmailServlet extends HttpServlet {
 									+"<br/><b>User :</b>"
 									+"<br/>getNickname retornó : "+user.getNickname()
 									+"<br/>getEmail retornó : "+user.getEmail()
-									+"<br/><img src='rey.jpg'> "
+									+"<br/><img src='imagenes/alfil.jpg'> "
 									+"<br/>"
 									+"<a href='"+ us.createLogoutURL("http://1-dot-profar-167808.appspot.com")+"'> Cerrar sesión </a>"
 									+ "</body></html>");

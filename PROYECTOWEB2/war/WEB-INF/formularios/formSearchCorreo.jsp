@@ -1,7 +1,12 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ page import="utilidades.*"%>
+<%@ page import="estructura.Correos"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Formulario</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Alumno</title>
 <script src="https://code.jquery.com/jquery-3.2.1.js"
 	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
 	crossorigin="anonymous"></script>
@@ -18,7 +23,15 @@
 <link href="navbar.css" rel="stylesheet">
 </head>
 <body>
-	<form role="form" action="/addCorreo" method="post">
+	<% String req = request.getParameter("correo"); %>
+	<% String correo="Ingrese correo"; %>
+	<% Correos pas; %>
+	<% if(req!=null){
+			correo=req;
+			pas=CorreoUtilidades.buscarCorreo(CorreoUtilidades.getEntries(), correo);
+			%>
+	<form role="form" action="/modificarCorreo" method="post">
+		<input type="hidden" value="<%=req %>" name="co">
 		<div class="form-group">
 			<label for="ejemplo_email_1">Email</label> <input type="text"
 				class="form-control" id="ejemplo_email_1"
@@ -42,5 +55,17 @@
 
 		<button type="submit" class="btn btn-default">Enviar</button>
 	</form>
+
+	<% } else { %>
+	<form role="form" action="formSearchCorreo.jsp" method="post">
+		<div class="form-group">
+			<label>Correo </label> <input type="text" class="form-control"
+				id="ejemplo_email_1" placeholder="<%=correo%>" name="correo">
+		</div>
+
+		<button type="submit" class="btn btn-default">Enviar</button>
+	</form>
+	<%}%>
+
 </body>
 </html>

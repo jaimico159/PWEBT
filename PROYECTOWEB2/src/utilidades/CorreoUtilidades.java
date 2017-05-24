@@ -63,7 +63,15 @@ public class CorreoUtilidades {
 	private static Correos convertEntityToCorreos (final Entity entity) {
 		final String correo = (String) entity.getProperty(Correos.CORREO);
 		final String tipo = (String) entity.getProperty(Correos.TIPO);
-		final boolean condicion = (boolean) entity.getProperty(Correos.CONDICION);
+		final boolean condicion = Boolean.parseBoolean((String) entity.getProperty(Correos.CONDICION));
 		return new Correos(correo, tipo, condicion);
+	}
+	
+	public static void ModificarCorreo(Correos ent, String correo,String tipo,boolean condicion){
+		final DatastoreService datastore = DSF.getDatastoreService();
+		ent.getEntity().setProperty(Correos.CORREO, correo);
+		ent.getEntity().setProperty(Correos.TIPO, tipo);
+		ent.getEntity().setProperty(Correos.CONDICION, condicion);
+		datastore.put(ent.getEntity());
 	}
 }
