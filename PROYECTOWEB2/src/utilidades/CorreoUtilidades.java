@@ -68,7 +68,7 @@ public class CorreoUtilidades {
 		return new Correos(correo, tipo, condicion);
 	}
 	
-	public static void ModificarCorreo(String co, String correo,String tipo,boolean condicion){
+	public static void ModificarCorreo(String co, String correo,String tipo,String condicion){
 		final DatastoreService datastore = DSF.getDatastoreService();
 		Query q = new Query(Correos.CORREO_LISTA);
 		final ArrayList <Entity> lista = new ArrayList<Entity>();

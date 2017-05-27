@@ -8,7 +8,7 @@ import javax.servlet.http.*;
 public class ModificarCorreoServlet extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		String correo=req.getParameter("correo"),tipo=req.getParameter("tipo"),co = req.getParameter("co");
-		boolean condicion=Boolean.parseBoolean(req.getParameter("condicion"));
+		String condicion=req.getParameter("condicion");
 		
 		
 		CorreoUtilidades.ModificarCorreo(co, correo, tipo, condicion);
@@ -27,7 +27,15 @@ public class ModificarCorreoServlet extends HttpServlet {
 									+"<br/>Tipo: "+tipo
 									+"<br/>Condicion: "+condicion
 									+"<br/>"
-									+"<br/><a href='/adminoptions'> Opciones de administrador</a>"
+									+"<br/>"
+									+"<form role='form' action='/choseOption' method='post'>"
+									+"<div class='form-group'>"
+									+"<input type='hidden' value='adminoptions' name='opcion'>"
+									+"</div>"
+									+"<button type='submit' class='btn btn-default'>Opciones de Admin</button>"
+								+"</form>"
+									+"<br/>"
+
 									+ "</body></html>");
 	}
 }
