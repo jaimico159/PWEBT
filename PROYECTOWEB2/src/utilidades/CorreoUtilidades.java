@@ -63,15 +63,23 @@ public class CorreoUtilidades {
 	private static Correos convertEntityToCorreos (final Entity entity) {
 		final String correo = (String) entity.getProperty(Correos.CORREO);
 		final String tipo = (String) entity.getProperty(Correos.TIPO);
-		final boolean condicion = Boolean.parseBoolean((String) entity.getProperty(Correos.CONDICION));
+		String cond = (String)entity.getProperty(Correos.CONDICION);
+		final Boolean condicion = Boolean.parseBoolean(cond);
 		return new Correos(correo, tipo, condicion);
 	}
 	
-	public static void ModificarCorreo(Correos ent, String correo,String tipo,boolean condicion){
+	public static void ModificarCorreo(String co, String correo,String tipo,boolean condicion){
 		final DatastoreService datastore = DSF.getDatastoreService();
-		ent.getEntity().setProperty(Correos.CORREO, correo);
-		ent.getEntity().setProperty(Correos.TIPO, tipo);
-		ent.getEntity().setProperty(Correos.CONDICION, condicion);
-		datastore.put(ent.getEntity());
+		Query q = new Query(Correos.CORREO_LISTA);
+		final ArrayList <Entity> lista = new ArrayList<Entity>();
+		for(Entity entity: datastore.prepare(q).asIterable()){
+			if(entity.getProperty(Correos.CORREO).equals(co)){
+				entity.setProperty(Correos.CORREO, correo);
+				entity.setProperty(Correos.TIPO, tipo);
+				entity.setProperty(Correos.CONDICION, condicion);
+				datastore.put(entity);
+			}
+		}
+		
 	}
 }

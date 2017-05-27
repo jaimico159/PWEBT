@@ -22,8 +22,35 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<url-pattern>/addCorreo</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>ChoseOptionServlet</servlet-name>
+		<servlet-class>pw2.ChoseOptionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ChoseOptionServlet</servlet-name>
+		<url-pattern>/choseOption</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>PROYECTOWEB2Servlet</servlet-name>
+		<servlet-class>pw2.PROYECTOWEB2Servlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PROYECTOWEB2Servlet</servlet-name>
+		<url-pattern>/editarOption</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ModificarCorreoServlet</servlet-name>
+		<servlet-class>pw2.ModificarCorreoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ModificarCorreoServlet</servlet-name>
+		<url-pattern>/modificarCorreo</url-pattern>
+	</servlet-mapping>
+	
 	
 	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
+		<welcome-file>Pagina.html</welcome-file>
 	</welcome-file-list>
 </web-app>

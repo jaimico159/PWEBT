@@ -59,8 +59,16 @@ public class GmailServlet extends HttpServlet {
 									+"<br/>Email: "+user.getEmail()
 									+"<br/><img src='imagenes/rey.jpg'> "
 									+"<br/>"
-									+"<br/><a href='/adminoptions'> Opciones de administrador</a>"
-									+"<br/><a href='/adminoptions'> Opciones de administrador</a>"
+									+"<form role='form' action='/choseOption' method='post'>"
+									+"<div class='form-group'>"
+									+"<label for='ejemplo_password_1'>Tipo</label><select"
+									+"class='form-control' id='sel1' name='opcion'>"
+									+"<option value='adminoptions'>Opciones de administrador</option>"
+									+"</select>"
+									+"</div>"
+									+"<button type='submit' class='btn btn-default'>Ir</button>"
+								+"</form>"
+									+"<br/>"
 									+"<a href='"+ us.createLogoutURL("http://1-dot-profar-167808.appspot.com")+"'> Cerrar sesión </a>"
 									+ "</body></html>");
 						}

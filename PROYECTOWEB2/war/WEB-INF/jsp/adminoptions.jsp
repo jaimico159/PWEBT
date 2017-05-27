@@ -79,11 +79,29 @@
 			
 
 	</div>
+		
+		<form role="form" action="/choseOption" method="post">
+		
+		<div class="form-group">
+			<label for="ejemplo_password_1">Tipo</label><select
+				class="form-control" id="sel1" name="opcion">
+				<option value="agregar">Agregar Correo</option>
+				<option value="editar">Editar Correo</option>
+			</select>
+		</div>
+
+		<button type="submit" class="btn btn-default">Ir</button>
+	</form>
+	<%if(request.getParameter("opcion")!=null){
+	if(request.getParameter("opcion").equals("agregar")){ %>
 		<br><h3>AGREGAR CORREO</h3>
 		<jsp:include page="../formularios/formAddCorreo.html"></jsp:include>
+		<%}else{ %>
 		
 		<br><br><br><br><h3>MODIFICAR CORREO</h3>
 		<jsp:include page="../formularios/formSearchCorreo.jsp"></jsp:include>
+		
+		<% } }%>
 </body>
 
 </html>

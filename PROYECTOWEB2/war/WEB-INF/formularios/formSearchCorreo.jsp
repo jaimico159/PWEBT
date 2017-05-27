@@ -35,7 +35,7 @@
 		<div class="form-group">
 			<label for="ejemplo_email_1">Email</label> <input type="text"
 				class="form-control" id="ejemplo_email_1"
-				placeholder="Introduce tu email" name="correo">
+				placeholder="<% pas.getCorreo(); %>" name="correo">
 		</div>
 		<div class="form-group">
 			<label for="ejemplo_password_1">Tipo</label><select
@@ -57,7 +57,7 @@
 	</form>
 
 	<% } else { %>
-	<form role="form" action="formSearchCorreo.jsp" method="post">
+	<form role="form" action="/editarOption" method="post">
 		<div class="form-group">
 			<label>Correo </label> <input type="text" class="form-control"
 				id="ejemplo_email_1" placeholder="<%=correo%>" name="correo">
