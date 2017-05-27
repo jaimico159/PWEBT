@@ -9,6 +9,8 @@ public class ModificarCorreoServlet extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		String correo=req.getParameter("correo"),tipo=req.getParameter("tipo"),co = req.getParameter("co");
 		boolean condicion=Boolean.parseBoolean(req.getParameter("condicion"));
+		
+		
 		CorreoUtilidades.ModificarCorreo(co, correo, tipo, condicion);
 		
 		resp.setContentType("text/html");	

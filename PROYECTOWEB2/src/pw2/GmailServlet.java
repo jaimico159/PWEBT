@@ -30,6 +30,7 @@ public class GmailServlet extends HttpServlet {
 		Correos elegido;
 		List<Correos> lista = CorreoUtilidades.getEntries();
 		out.println(lista.size());
+		
 		if(user==null){
 			resp.sendRedirect(us.createLoginURL("/Login.jsp"));
 		}
