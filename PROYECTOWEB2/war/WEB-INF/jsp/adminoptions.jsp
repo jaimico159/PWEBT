@@ -64,8 +64,8 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li class="active"><a href="./">Default <span
 								class="sr-only">(current)</span></a></li>
-						<li><a href="../navbar-static-top/">Static top</a></li>
-						<li><a href="../navbar-fixed-top/">Fixed top</a></li>
+						<li><a href="#">Static top</a></li>
+						<li><a href="#">Fixed top</a></li>
 					</ul>
 				</div>
 				<!--/.nav-collapse -->
@@ -100,7 +100,8 @@
 		
 		<br><br><br><br><h3>MODIFICAR CORREO</h3>
 		<jsp:include page="../formularios/formSearchCorreo.jsp"></jsp:include>
-		
+		<br>
+		<a href='"+ us.createLogoutURL("http://1-dot-profar-167808.appspot.com")+"'> Salir </a>
 		<% } }%>
 </body>
 

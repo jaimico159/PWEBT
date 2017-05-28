@@ -64,8 +64,8 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li class="active"><a href="./">Default <span
 								class="sr-only">(current)</span></a></li>
-						<li><a href="../navbar-static-top/">Static top</a></li>
-						<li><a href="../navbar-fixed-top/">Fixed top</a></li>
+						<li><a href="#">Static top</a></li>
+						<li><a href="#">Fixed top</a></li>
 					</ul>
 				</div>
 				<!--/.nav-collapse -->
