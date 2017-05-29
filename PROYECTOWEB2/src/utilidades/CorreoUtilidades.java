@@ -68,18 +68,24 @@ public class CorreoUtilidades {
 		return new Correos(correo, tipo, condicion);
 	}
 	
-	public static void ModificarCorreo(String co, String correo,String tipo,String condicion){
+	public static void ModificarCorreo(String co, String correo, String tipo, String condicion) {
 		final DatastoreService datastore = DSF.getDatastoreService();
 		Query q = new Query(Correos.CORREO_LISTA);
-		final ArrayList <Entity> lista = new ArrayList<Entity>();
-		for(Entity entity: datastore.prepare(q).asIterable()){
-			if(entity.getProperty(Correos.CORREO).equals(co)){
+		final ArrayList<Entity> lista = new ArrayList<Entity>();
+		for (Entity entity : datastore.prepare(q).asIterable()) {
+			if (entity.getProperty(Correos.CORREO).equals(co)) {
 				entity.setProperty(Correos.CORREO, correo);
 				entity.setProperty(Correos.TIPO, tipo);
 				entity.setProperty(Correos.CONDICION, condicion);
 				datastore.put(entity);
 			}
 		}
+
+	}
+
+	public static boolean EnviarMsgValidacion(String correo, String clave)throws UnknownException{
+		 
 		
+		return false;		
 	}
 }
