@@ -1,4 +1,4 @@
-package pw2;
+package controladores;
 
 import java.io.IOException;
 

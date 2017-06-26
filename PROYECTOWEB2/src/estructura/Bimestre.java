@@ -1,6 +1,9 @@
 package estructura;
 
 public class Bimestre {
+	
+	
+	
 	private Ciencias C1,C2,C3,C4;
 	private Letras L1,L2,L3,L4;
 	public Bimestre(){

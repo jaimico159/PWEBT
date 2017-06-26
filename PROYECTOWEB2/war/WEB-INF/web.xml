@@ -6,7 +6,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet>
 		<servlet-name>GmailServlet</servlet-name>
-		<servlet-class>pw2.GmailServlet</servlet-class>
+		<servlet-class>controladores.GmailServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>GmailServlet</servlet-name>
@@ -24,7 +24,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	
 	<servlet>
 		<servlet-name>ChoseOptionServlet</servlet-name>
-		<servlet-class>pw2.ChoseOptionServlet</servlet-class>
+		<servlet-class>controladores.ChoseOptionServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>ChoseOptionServlet</servlet-name>
@@ -33,7 +33,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	
 	<servlet>
 		<servlet-name>PROYECTOWEB2Servlet</servlet-name>
-		<servlet-class>pw2.PROYECTOWEB2Servlet</servlet-class>
+		<servlet-class>controladores.PROYECTOWEB2Servlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>PROYECTOWEB2Servlet</servlet-name>

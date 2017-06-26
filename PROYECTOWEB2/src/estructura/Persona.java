@@ -1,65 +1,49 @@
 package estructura;
 
+import com.google.appengine.api.datastore.Entity;
+
 public class Persona {
-	private String nombres,ap_paterno,ap_materno;
-	private String DNI,correo;
 	
-	public Persona(){
-		nombres=null;
-		ap_materno=null;
-		ap_paterno=null;
-		DNI=null;
-		correo=null;
+	public static final String ENTIDAD = "PERSONA";
+	public static final String NOMBRES = "NOMBRES";
+	public static final String AP_PATERNO = "AP_PATERNO";
+	public static final String AP_MATERNO = "AP_MATERNO";
+	public static final String DNI = "DNI";
+	public static final String CORREO = "CORREO";
+	
+	private Entity persona = new Entity(ENTIDAD);
+	
+	public Persona(String nombres, String ap_paterno,String ap_materno,int dni,Correos correo){
+		persona.setProperty(NOMBRES, nombres);
+		persona.setProperty(AP_PATERNO, ap_paterno);
+		persona.setProperty(AP_PATERNO, ap_materno);
+		persona.setProperty(DNI, dni);
+		persona.setProperty(CORREO, correo);
+		
 	}
-
-	public Persona(String nombres, String ap_paterno, String ap_materno, String dNI, String correo) {
-		super();
-		this.nombres = nombres;
-		this.ap_paterno = ap_paterno;
-		this.ap_materno = ap_materno;
-		DNI = dNI;
-		this.correo = correo;
-	}
-
+	
 	public String getNombres() {
-		return nombres;
-	}
-
-	public void setNombres(String nombres) {
-		this.nombres = nombres;
+		return (String) persona.getProperty(NOMBRES);
 	}
 
 	public String getAp_paterno() {
-		return ap_paterno;
-	}
-
-	public void setAp_paterno(String ap_paterno) {
-		this.ap_paterno = ap_paterno;
+		return (String) persona.getProperty(AP_PATERNO);
 	}
 
 	public String getAp_materno() {
-		return ap_materno;
+		return (String) persona.getProperty(AP_MATERNO);
 	}
 
-	public void setAp_materno(String ap_materno) {
-		this.ap_materno = ap_materno;
+	public int getDNI() {
+		return (int) persona.getProperty(DNI);
 	}
 
-	public String getDNI() {
-		return DNI;
+	public Correos getCorreo() {
+		return (Correos) persona.getProperty(CORREO);
 	}
 
-	public void setDNI(String dNI) {
-		DNI = dNI;
+	public Entity getEntity(){
+		return persona;
 	}
-
-	public String getCorreo() {
-		return correo;
-	}
-
-	public void setCorreo(String correo) {
-		this.correo = correo;
-	}
-	
 	
 }
