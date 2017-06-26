@@ -12,5 +12,5 @@ public class PROYECTOWEB2Servlet extends HttpServlet {
 		req.getRequestDispatcher("WEB-INF/formularios/formSearchCorreo.jsp").forward(req, resp);
 	}
 	
-   System.out.print("");
+   System.out.print("prueba");
 }
