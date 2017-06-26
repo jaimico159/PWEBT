@@ -83,9 +83,4 @@ public class CorreoUtilidades {
 
 	}
 
-	public static boolean EnviarMsgValidacion(String correo, String clave)throws UnknownException{
-		 
-		
-		return false;		
-	}
 }
