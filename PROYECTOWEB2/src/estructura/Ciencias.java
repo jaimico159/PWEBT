@@ -5,6 +5,9 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class Ciencias {
+	
+	public static final String COD_GRADO
+	
 	private int cod_grado;
 	private Calendar fecha;
 	private ArrayList<Curso_nota> cursos = new ArrayList<Curso_nota>();

@@ -5,9 +5,9 @@ import com.google.appengine.api.datastore.Entity;
 public class Alumno extends Persona {
 	
 	public static final String ENTIDAD = "ALUMNOS";
-	public static final String CODIGO_AL = "cod_alumno";
-	public static final String NOTAS = "notas";
-	public static final String GRADO = "grado";
+	public static final String CODIGO_AL = "COD_ALUMNO";
+	public static final String NOTAS = "NOTAS";
+	public static final String GRADO = "GRADO";
 	public static final String PERSONA = "PERSONA";
 	public static final String SECCION = "SECCION";
 	
