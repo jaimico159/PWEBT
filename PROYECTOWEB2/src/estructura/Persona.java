@@ -18,9 +18,19 @@ public class Persona {
 		persona.setProperty(AP_PATERNO, ap_paterno);
 		persona.setProperty(AP_PATERNO, ap_materno);
 		persona.setProperty(DNI, dni);
+		persona.setProperty(CORREO, correo.getEntity());
+		
+	}
+	
+	public Persona(String nombres, String ap_paterno,String ap_materno,int dni,Entity correo){
+		persona.setProperty(NOMBRES, nombres);
+		persona.setProperty(AP_PATERNO, ap_paterno);
+		persona.setProperty(AP_PATERNO, ap_materno);
+		persona.setProperty(DNI, dni);
 		persona.setProperty(CORREO, correo);
 		
 	}
+	
 	
 	public String getNombres() {
 		return (String) persona.getProperty(NOMBRES);
@@ -38,8 +48,8 @@ public class Persona {
 		return (int) persona.getProperty(DNI);
 	}
 
-	public Correos getCorreo() {
-		return (Correos) persona.getProperty(CORREO);
+	public String getCorreo() {
+		return (String) ((Entity) persona.getProperty(CORREO)).getProperty("correo");
 	}
 
 	public Entity getEntity(){

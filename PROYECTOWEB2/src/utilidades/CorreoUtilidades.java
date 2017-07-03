@@ -73,7 +73,7 @@ public class CorreoUtilidades {
 		Query q = new Query(Correos.CORREO_LISTA);
 		final ArrayList<Entity> lista = new ArrayList<Entity>();
 		for (Entity entity : datastore.prepare(q).asIterable()) {
-			if (entity.getProperty(Correos.CORREO).equals(co)) {
+			if (entity.getProperty(Correos.CORREO).equals(co)) {//compara correo guardado con correo de la lista
 				entity.setProperty(Correos.CORREO, correo);
 				entity.setProperty(Correos.TIPO, tipo);
 				entity.setProperty(Correos.CONDICION, condicion);
