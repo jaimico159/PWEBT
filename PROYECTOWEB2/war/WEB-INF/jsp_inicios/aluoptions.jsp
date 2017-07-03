@@ -7,7 +7,34 @@
 <title></title>
 </head>
 <body>
+	<!DOCTYPE html>
+<html>
+
+<head>
+<title>Información de la cuenta</title>
+<meta charset=utf-8;>
+
+<body>
 	
+	<h1>DATOS DEL ALUMNO</h1>
+	
+	<br>
+	<a href='../'>Regresar...</a>
+	<br />
+	<b>User :</b>
+	<br /> getNickname retornó : "+user.getNickname() 
+	<br /> getEmail retornó : "+user.getEmail() 
+	<br />
+	<img src='imagenes/peon.jpg'>
+	<br />
+	
+	<br><br><br><br><h3>VER NOTAS</h3>
+		<jsp:include page="../formularios/formRegistroNotas.jsp"></jsp:include>
+		<br>
+		<a href='"+ us.createLogoutURL("http://1-dot-profar-167808.appspot.com")+"'> Salir </a>
+	
+		
+		
 
 </body>
 </html>

@@ -80,20 +80,7 @@ public class GmailServlet extends HttpServlet {
 					}
 					else if(elegido.getTipo().equals("estudiante")){
 						if(elegido.getCondicion()){
-							out.println("<!DOCTYPE html>"	 
-									+ "<html>"
-									+ "<head><title>Información de la cuenta</title>"
-									+ "<meta charset=utf-8;>"
-									+ "<body>"
-									+ "<h1>Información de la Cuenta Google</h1>"
-									+ "<br><a href='../'>Regresar...</a>"
-									+"<br/><b>User :</b>"
-									+"<br/>getNickname retornó : "+user.getNickname()
-									+"<br/>getEmail retornó : "+user.getEmail()
-									+"<br/><img src='imagenes/peon.jpg'> "
-									+"<br/>"
-									+"<a href='"+ us.createLogoutURL("http://1-dot-profar-167808.appspot.com")+"'> Cerrar sesión </a>"
-									+ "</body></html>");
+							req.getRequestDispatcher("/WEB-INF/jsp_inicios/aluoptions.jsp").forward(req, resp);
 						}
 						else{
 							out.println("Su cuenta es de estudiante pero está inactiva contactese con el administrador principal");

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Formulario</title>
+<title>Registro de Notas</title>
 <script src="https://code.jquery.com/jquery-3.2.1.js"
 	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
 	crossorigin="anonymous"></script>
@@ -18,14 +18,49 @@
 <link href="navbar.css" rel="stylesheet">
 </head>
 <body>
-	<form role="form" action="/addNota" method="post">
-		<div class="form-group">
-			<label for="ejemplo_email_1">Elegir ALumno</label> <input type="text"
-				class="form-control" id="ejemplo_email_1"
-				placeholder="Introduce tu email" name="correo">
-		</div>
-		
+	<CENTER>
+<TABLE BORDER>
+<CAPTION ALIGN=bottom>Resumen de tablas</CAPTION>        
+<TR>
+<TD><TH>BIMESTRE 1</TH><TH>BIMESTRE 2</TH><TH>BRIMESTRE 3</TH><TH>BIMESTRE 4</TH><TH>RESULTADO</TH></TD>
+</TR>
 
-		</form>
+<TR ALIGN=CENTER>    
+<TH>MATEMATICAS</TH><TD>11</TD><TD>12</TD><TD>11</TD><TD>15</TD><TD>APROBADO</TD>
+</TR>
+
+<TR ALIGN=CENTER>    
+<TH>LITERATURA</TH><TD>14</TD><TD>16</TD><TD>13</TD><TD>15</TD><TD>APROBADO</TD>
+</TR>
+
+<TR ALIGN=CENTER>    
+<TH>INGLES</TH><TD>10</TD><TD>10</TD><TD>13</TD><TD>7</TD><TD>DESAPROBADO</TD>
+</TR>
+
+<TR ALIGN=CENTER>    
+<TH>RAZ. MATEMATICO</TH><TD>16</TD><TD>18</TD><TD>14</TD><TD>15</TD><TD>APROBADO</TD>
+</TR>
+
+<TR ALIGN=CENTER>    
+<TH>RAZ. VERBAL</TH><TD>17</TD><TD>16</TD><TD>19</TD><TD>20</TD><TD>APROBADO</TD>
+</TR>
+
+<TR ALIGN=CENTER>    
+<TH>EDU. FISICA</TH><TD>20</TD><TD>20</TD><TD>20</TD><TD>20</TD><TD>APROBADO</TD>
+</TR>
+
+<TR ALIGN=CENTER>    
+<TH>FISICA</TH><TD>12</TD><TD>10</TD><TD>4</TD><TD>8</TD><TD>DESAPROBADO</TD>
+</TR>
+
+<TR ALIGN=CENTER>    
+<TH>QUIMICA</TH><TD>13</TD><TD>15</TD><TD>12</TD><TD>11</TD><TD>APROBADO</TD>
+</TR>
+
+<TR ALIGN=CENTER>    
+<TH>HISTORIA</TH><TD>15</TD><TD>13</TD><TD>17</TD><TD>15</TD><TD>APROBADO</TD>
+</TR>
+</TABLE>
+</CENTER>
 </body>
 </html>
