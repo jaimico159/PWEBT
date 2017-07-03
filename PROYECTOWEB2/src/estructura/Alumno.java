@@ -11,16 +11,16 @@ public class Alumno extends Persona {
 	public static final String PERSONA = "PERSONA";
 	public static final String SECCION = "SECCION";
 	
-	private Entity alumno = new Entity(ENTIDAD);
+	private Entity alumno;
 	
 	public Alumno (String nombres, String ap_paterno,String ap_materno,int dni,Correos correo,
 					String cod_al, Notas notas, int grado, String seccion){
 		super(nombres,ap_paterno,ap_materno,dni,correo);
+		alumno=new Entity(ENTIDAD,super.getEntity().getKey());
 		alumno.setProperty(CODIGO_AL, cod_al);
 		alumno.setProperty(NOTAS, notas);
 		alumno.setProperty(GRADO, grado);
 		alumno.setProperty(SECCION, seccion);
-		alumno.setProperty(PERSONA, super.getEntity());
 	}
 		
 	public String getCod_alumno() {
@@ -38,6 +38,5 @@ public class Alumno extends Persona {
 	public Entity getAlumno(){
 		return alumno;
 	}
-	
-	
+		
 }

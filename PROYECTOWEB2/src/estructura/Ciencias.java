@@ -6,7 +6,7 @@ import java.util.GregorianCalendar;
 
 public class Ciencias {
 	
-	public static final String COD_GRADO
+	//public static final String COD_GRADO
 	
 	private int cod_grado;
 	private Calendar fecha;
