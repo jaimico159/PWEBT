@@ -74,7 +74,8 @@ public class GmailServlet extends HttpServlet {
 									+ "</body></html>");
 						}
 						else{
-							out.println("Su cuenta es de administrador pero está inactiva contactese con el administrador principal");
+							out.println("Su cuenta es de administrador pero está inactiva contactese con "
+									+ "el administrador principal");
 						}		 
 					}
 					else if(elegido.getTipo().equals("estudiante")){
