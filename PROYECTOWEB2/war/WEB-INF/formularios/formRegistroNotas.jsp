@@ -24,21 +24,7 @@
 				class="form-control" id="ejemplo_email_1"
 				placeholder="Introduce tu email" name="correo">
 		</div>
-		<div class="form-group">
-			<label for="ejemplo_password_1">Tipo</label><select
-				class="form-control" id="sel1" name="tipo">
-				<option value="administrador">administrador</option>
-				<option value="director">director</option>
-				<option value="secretario">secretario</option>
-				<option value="profesor">profesor</option>
-				<option value="estudiante">estudiante</option>
-			</select>
-		</div>
-		<label class="radio-inline"> <input type="radio"
-			name="condicion" value="true">Activo
-		</label> <label class="radio-inline"> <input type="radio"
-			name="condicion" value="false">Inactivo
-		</label>
+		
 
 		<button type="submit" class="btn btn-default">Enviar</button>
 	</form>
