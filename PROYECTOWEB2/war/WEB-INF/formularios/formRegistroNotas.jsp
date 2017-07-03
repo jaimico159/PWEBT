@@ -20,7 +20,7 @@
 <body>
 	<form role="form" action="/addNota" method="post">
 		<div class="form-group">
-			<label for="ejemplo_email_1">Email</label> <input type="text"
+			<label for="ejemplo_email_1">Elegir ALumno</label> <input type="text"
 				class="form-control" id="ejemplo_email_1"
 				placeholder="Introduce tu email" name="correo">
 		</div>
