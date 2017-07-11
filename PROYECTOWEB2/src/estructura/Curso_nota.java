@@ -1,48 +1,31 @@
 package estructura;
 
+import com.google.appengine.api.datastore.Entity;
+import com.google.appengine.api.datastore.Key;
 
 public class Curso_nota {
-	String cod_curso;
-	String cod_profe;
-	String valor_nota;
 	
+	public static final String ENTIDAD="CURSO_NOTA";
+	public static final String COD_CURSO="COD_CURSO";
+	public static final String VALOR_NOTA="VALOR_NOTA";
 	
+	private Entity curso_nota = new Entity(ENTIDAD);
+	
+	public Curso_nota(Key curso,int valor_nota){
+		curso_nota.setProperty(COD_CURSO, curso);
+		curso_nota.setProperty(VALOR_NOTA, valor_nota);
+	}
 	public Curso_nota(){
-		cod_curso=null;
-		valor_nota=null;
-		cod_profe=null;
+		curso_nota.setProperty(COD_CURSO, null);
+		curso_nota.setProperty(VALOR_NOTA, 0);
 	}
-	
-	public Curso_nota(String cod_curso,String cod_profe, String valor_nota) {
-		super();
-		this.cod_curso = cod_curso;
-		this.cod_profe=cod_profe;
-		this.valor_nota = valor_nota;
-		
-	}
-	
-	
-	public String getCod_profe() {
-		return cod_profe;
-	}
-
-	public void setCod_profe(String cod_profe) {
-		this.cod_profe = cod_profe;
-	}
-
 	public String getCod_curso() {
-		return cod_curso;
+		return (String)curso_nota.getProperty(COD_CURSO);
 	}
-	public void setCod_curso(String cod_curso) {
-		this.cod_curso = cod_curso;
+	public int getValor_nota() {
+		return (int) curso_nota.getProperty(VALOR_NOTA);
 	}
-	public String getValor_nota() {
-		return valor_nota;
+	public Entity getEntity(){
+		return curso_nota;
 	}
-	public void setValor_nota(String valor_nota) {
-		this.valor_nota = valor_nota;
-	}
-	
-	
-	
 }

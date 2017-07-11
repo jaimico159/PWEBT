@@ -1,84 +1,81 @@
 package estructura;
 
+import com.google.appengine.api.datastore.Entity;
+
 public class Bimestre {
+	public static final String ENTIDAD="BIMESTRE";
+	public static final String C1="C1";
+	public static final String C2="C2";
+	public static final String C3="C3";
+	public static final String C4="C4";
+	public static final String L1="L1";
+	public static final String L2="L2";
+	public static final String L3="L3";
+	public static final String L4="L4";
 	
+	private Ciencias c1,c2,c3,c4;
+	private Letras l1,l2,l3,l4;
 	
+	private Entity bimestre = new Entity(ENTIDAD);
 	
-	private Ciencias C1,C2,C3,C4;
-	private Letras L1,L2,L3,L4;
+	public Bimestre(Ciencias c1,Ciencias c2,Ciencias c3,Ciencias c4,Letras l1, Letras l2, Letras l3, Letras l4){
+		bimestre.setProperty(C1,c1.getEntity().getKey());
+		bimestre.setProperty(C2,c2.getEntity().getKey());
+		bimestre.setProperty(C3,c3.getEntity().getKey());
+		bimestre.setProperty(C4,c4.getEntity().getKey());
+		bimestre.setProperty(L1,l1.getEntity().getKey());
+		bimestre.setProperty(L2,l2.getEntity().getKey());
+		bimestre.setProperty(L3,l3.getEntity().getKey());
+		bimestre.setProperty(L4,l4.getEntity().getKey());
+	}
 	public Bimestre(){
-		C1=null;
-		C2=null;
-		C3=null;
-		C4=null;
-		L1=null;
-		L2=null;
-		L3=null;
-		L4=null;
+		c1=new Ciencias();
+		c2=new Ciencias();
+		c3=new Ciencias();
+		c4=new Ciencias();
+		l1=new Letras();
+		l2=new Letras();
+		l3=new Letras();
+		l4=new Letras();
+		bimestre.setProperty(C1,c1.getEntity().getKey());
+		bimestre.setProperty(C2,c2.getEntity().getKey());
+		bimestre.setProperty(C3,c3.getEntity().getKey());
+		bimestre.setProperty(C4,c4.getEntity().getKey());
+		bimestre.setProperty(L1,l1.getEntity().getKey());
+		bimestre.setProperty(L2,l2.getEntity().getKey());
+		bimestre.setProperty(L3,l3.getEntity().getKey());
+		bimestre.setProperty(L4,l4.getEntity().getKey());
+		
 	}
-	public Bimestre(Ciencias c1, Ciencias c2, Ciencias c3, Ciencias c4, Letras l1, Letras l2, Letras l3, Letras l4) {
-		super();
-		C1 = c1;
-		C2 = c2;
-		C3 = c3;
-		C4 = c4;
-		L1 = l1;
-		L2 = l2;
-		L3 = l3;
-		L4 = l4;
-	}
+		
+	
+	
 	public Ciencias getC1() {
-		return C1;
-	}
-	public void setC1(Ciencias c1) {
-		C1 = c1;
+		return c1;
 	}
 	public Ciencias getC2() {
-		return C2;
-	}
-	public void setC2(Ciencias c2) {
-		C2 = c2;
+		return c2;
 	}
 	public Ciencias getC3() {
-		return C3;
-	}
-	public void setC3(Ciencias c3) {
-		C3 = c3;
+		return c3;
 	}
 	public Ciencias getC4() {
-		return C4;
-	}
-	public void setC4(Ciencias c4) {
-		C4 = c4;
+		return c4;
 	}
 	public Letras getL1() {
-		return L1;
-	}
-	public void setL1(Letras l1) {
-		L1 = l1;
+		return l1;
 	}
 	public Letras getL2() {
-		return L2;
-	}
-	public void setL2(Letras l2) {
-		L2 = l2;
+		return l2;
 	}
 	public Letras getL3() {
-		return L3;
-	}
-	public void setL3(Letras l3) {
-		L3 = l3;
+		return l3;
 	}
 	public Letras getL4() {
-		return L4;
+		return l4;
 	}
-	public void setL4(Letras l4) {
-		L4 = l4;
-	}
-	@Override
-	public String toString() {
-		return "Bimestre [C1=" + C1 + ", C2=" + C2 + ", C3=" + C3 + ", C4=" + C4 + ", L1=" + L1 + ", L2=" + L2 + ", L3="
-				+ L3 + ", L4=" + L4 + "]";
+	public Entity getEntity(){
+		return bimestre;
 	}
 	
 	

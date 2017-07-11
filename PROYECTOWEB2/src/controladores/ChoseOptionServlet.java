@@ -9,6 +9,6 @@ import javax.servlet.http.*;
 public class ChoseOptionServlet extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		resp.setContentType("text/html");
-			req.getRequestDispatcher("WEB-INF/jsp/adminoptions.jsp").forward(req, resp);	
+			req.getRequestDispatcher("WEB-INF/jsp_inicios/adminoptions.jsp").forward(req, resp);	
 	}
 }

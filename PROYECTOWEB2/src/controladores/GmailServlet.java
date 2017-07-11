@@ -37,7 +37,7 @@ public class GmailServlet extends HttpServlet {
 		else{
 			System.out.println(user.getEmail());
 			if(user.getEmail().equals("jaimehuarsayarivera@gmail.com") | user.getEmail().equals("jaime.huarsaya.rivera@gmail.com")){
-				req.getRequestDispatcher("/WEB-INF/jsp/adminoptions.jsp").forward(req, resp);
+				req.getRequestDispatcher("/WEB-INF/jsp_inicios/adminoptions.jsp").forward(req, resp);
 			}else
 			if(lista.isEmpty()){
 				System.out.println("lista vacia causa");
