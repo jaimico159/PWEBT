@@ -2,58 +2,46 @@ package estructura;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
+import com.google.appengine.api.datastore.Entity;
+import com.google.appengine.api.datastore.Key;
+
 public class Letras {
-	private int cod_grado;
-	private Calendar fecha;
+	
+	public static final String ENTIDAD="LETRAS";
+	public static final String COD_SALON="COD_SALON";
+	public static final String FECHA="FECHA";
+	public static final String NOTAS="NOTAS";
+	
 	private ArrayList<Curso_nota> cursos = new ArrayList<Curso_nota>();
-	public Letras(int grado){
-		cod_grado=grado;
+	private ArrayList<Key> claves = new ArrayList<Key>();
+	
+	private Entity letras = new Entity(ENTIDAD);
+	
+	public Letras(Key cod_salon, Date Fecha, ArrayList<Key> notas){
+		letras.setProperty(COD_SALON, cod_salon);
+		letras.setProperty(FECHA, Fecha);
+		letras.setProperty(NOTAS, notas);
 	}
-	
-	
+	public Letras(){
+		setCursos();
+		letras.setProperty(COD_SALON, null);
+		letras.setProperty(FECHA, null);
+		letras.setProperty(NOTAS, claves);
+	}
 	
 	public void setCursos(){
-		if(cod_grado==1 | cod_grado==2 |cod_grado==3)
-			for(int i=0;i<9;i++)
-				cursos.add(new Curso_nota());
-		else
-			for(int i=0;i<11;i++)
-				cursos.add(new Curso_nota());
+		for(int i=0;i<5;i++){ 
+			cursos.add(new Curso_nota());
+			claves.add(cursos.get(i).getEntity().getKey());
+		}
 	}
-	
 	public ArrayList<Curso_nota> getCursos(){
 		return cursos;
+	}	
+	public Entity getEntity(){
+		return letras;
 	}
-	public void setCursos(ArrayList<Curso_nota> cursos){
-		this.cursos=cursos;
-	}
-
-	public int getCod_grado() {
-		return cod_grado;
-	}
-
-	public void setCod_grado(int cod_grado) {
-		this.cod_grado = cod_grado;
-	}
-
-	public Calendar getFecha() {
-		return fecha;
-	}
-
-	public void setFecha(int Y, int M, int D) {
-		this.fecha=new GregorianCalendar(Y,M,D);
-	}
-
-
-
-	@Override
-	public String toString() {
-		return "Letras [cod_grado=" + cod_grado + ", fecha=" + fecha + ", cursos=" + cursos + "]";
-	}
-	
-	
-	
-
 }

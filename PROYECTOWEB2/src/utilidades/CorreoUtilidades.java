@@ -60,7 +60,7 @@ public class CorreoUtilidades {
 	
 	//Hay 5 tipos de cuenta: alumno,profesor,director,secretario,administrador
 	
-	private static Correos convertEntityToCorreos (final Entity entity) {
+	public static Correos convertEntityToCorreos (final Entity entity) {
 		final String correo = (String) entity.getProperty(Correos.CORREO);
 		final String tipo = (String) entity.getProperty(Correos.TIPO);
 		String cond = (String)entity.getProperty(Correos.CONDICION);

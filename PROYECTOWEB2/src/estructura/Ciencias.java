@@ -2,64 +2,46 @@ package estructura;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
+
+import com.google.appengine.api.datastore.Entity;
+import com.google.appengine.api.datastore.Key;
 
 public class Ciencias {
 	
-	//public static final String COD_GRADO
+	public static final String ENTIDAD="CIENCIAS";
+	public static final String COD_SALON="COD_SALON";
+	public static final String FECHA="FECHA";
+	public static final String NOTAS="NOTAS";
 	
-	private int cod_grado;
-	private Calendar fecha;
 	private ArrayList<Curso_nota> cursos = new ArrayList<Curso_nota>();
-	public Ciencias(int grado){
-		cod_grado=grado;
+	private ArrayList<Key> claves = new ArrayList<Key>();
+	
+	private Entity ciencias = new Entity(ENTIDAD);
+	
+	public Ciencias(Key cod_salon, Date Fecha, ArrayList<Key> notas){
+		ciencias.setProperty(COD_SALON, cod_salon);
+		ciencias.setProperty(FECHA, Fecha);
+		ciencias.setProperty(NOTAS, notas);
 	}
-	
-	
+	public Ciencias(){
+		setCursos();
+		ciencias.setProperty(COD_SALON, null);
+		ciencias.setProperty(FECHA, null);
+		ciencias.setProperty(NOTAS, claves);
+	}
 	
 	public void setCursos(){
-		if(cod_grado==1 | cod_grado==2 |cod_grado==3)
-			for(int i=0;i<9;i++)
-				cursos.add(new Curso_nota());
-		else
-			for(int i=0;i<11;i++)
-				cursos.add(new Curso_nota());
+		for(int i=0;i<5;i++){ 
+			cursos.add(new Curso_nota());
+			claves.add(cursos.get(i).getEntity().getKey());
+		}
 	}
-	
 	public ArrayList<Curso_nota> getCursos(){
 		return cursos;
+	}	
+	public Entity getEntity(){
+		return ciencias;
 	}
-	public void setCursos(ArrayList<Curso_nota> cursos){
-		this.cursos=cursos;
-	}
-
-	public int getCod_grado() {
-		return cod_grado;
-	}
-
-	public void setCod_grado(int cod_grado) {
-		this.cod_grado = cod_grado;
-	}
-
-	public Calendar getFecha() {
-		return fecha;
-	}
-
-	public void setFecha(int Y, int M, int D) {
-		
-		this.fecha=new GregorianCalendar(Y,M,D);
-	}
-
-
-
-	@Override
-	public String toString() {
-		return "Ciencias [cod_grado=" + cod_grado + ", fecha=" + fecha + ", cursos=" + cursos + "]";
-	}
-	
-	
-	
-	
-	
-	
 }

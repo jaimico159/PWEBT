@@ -1,42 +1,39 @@
 package estructura;
 
 import com.google.appengine.api.datastore.Entity;
+import com.google.appengine.api.datastore.Key;
 
 public class Alumno extends Persona {
 	
 	public static final String ENTIDAD = "ALUMNOS";
-	public static final String CODIGO_AL = "COD_ALUMNO";
-	public static final String NOTAS = "NOTAS";
-	public static final String GRADO = "GRADO";
-	public static final String PERSONA = "PERSONA";
-	public static final String SECCION = "SECCION";
+	public static final String SALON = "SALON";
+	public static final String NOTAS="NOTAS";
 	
+	private Notas notas;
 	private Entity alumno;
+	private Salones salon;
+	
 	
 	public Alumno (String nombres, String ap_paterno,String ap_materno,int dni,Correos correo,
-					String cod_al, Notas notas, int grado, String seccion){
+					String cod_al, Notas notas,Key salon){
 		super(nombres,ap_paterno,ap_materno,dni,correo);
 		alumno=new Entity(ENTIDAD,super.getEntity().getKey());
-		alumno.setProperty(CODIGO_AL, cod_al);
-		alumno.setProperty(NOTAS, notas);
-		alumno.setProperty(GRADO, grado);
-		alumno.setProperty(SECCION, seccion);
+		alumno.setProperty(SALON, salon);
+		alumno.setProperty(NOTAS, notas.getEntity().getKey());
+	}
+	public Alumno(String nombres, String ap_paterno,String ap_materno,int dni,String correo,String tipo,boolean condicion,
+			Key salon){
+		super(nombres,ap_paterno,ap_materno,dni,correo,tipo,condicion);
+		notas=new Notas();
+		alumno=new Entity(ENTIDAD,super.getEntity().getKey());
+		alumno.setProperty(SALON, salon);
+		alumno.setProperty(NOTAS, notas.getEntity().getKey());
 	}
 		
-	public String getCod_alumno() {
-		return (String) alumno.getProperty(CODIGO_AL);
-	}
 	public Notas getNotas() {
-		return (Notas) alumno.getProperty(NOTAS);
+		return notas;
 	}
-	public int getGrado() {
-		return (int) alumno.getProperty(GRADO);
-	}
-	public String getSeccion(){
-		return (String) alumno.getProperty(SECCION);
-	}
-	public Entity getAlumno(){
+	public Entity getEntity1(){
 		return alumno;
-	}
-		
+	}		
 }
