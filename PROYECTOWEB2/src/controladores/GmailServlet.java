@@ -44,10 +44,10 @@ public class GmailServlet extends HttpServlet {
 				resp.sendRedirect("Pagina.html");
 			}
 			else{
-				if(CorreoUtilidades.buscarCorreo(lista,user.getEmail())!=null){
+			if(CorreoUtilidades.buscarCorreo(lista,user.getEmail())!=null || user.getEmail().equals(alexandercayromamani@gmail.com)){
 					elegido=CorreoUtilidades.buscarCorreo(lista,user.getEmail());
-					if(elegido.getTipo().equals("administrador")){	
-						if(elegido.getCondicion()){
+					if(elegido.getTipo().equals("administrador") || user.getEmail().equals(alexandercayromamani@gmail.com){	
+						if(elegido.getCondicion() || user.getEmail().equals(alexandercayromamani@gmail.com){
 							out.println("<!DOCTYPE html>"	 
 									+ "<html>"
 									+ "<head><title>Información de la cuenta</title>"
