@@ -20,7 +20,7 @@
 <body>
 	<CENTER>
 <TABLE BORDER>
-<CAPTION ALIGN=bottom>Resumen de tablas</CAPTION>        
+<CAPTION ALIGN=bottom>Notas del Alumno</CAPTION>        
 <TR>
 <TD><TH>BIMESTRE 1</TH><TH>BIMESTRE 2</TH><TH>BRIMESTRE 3</TH><TH>BIMESTRE 4</TH><TH>RESULTADO</TH></TD>
 </TR>
