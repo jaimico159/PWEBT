@@ -15,7 +15,7 @@ public class SalonesUtilidades {
 		Salones b = new Salones(grado,seccion);
 		a.put(b.getEntity());
 	}
-	public static ArrayList<Key> lista(){
+	public static ArrayList<Key> listaClaves(){
 		DatastoreService data = DSF.getDatastoreService();
 		Query q = new Query(Salones.ENTIDAD).setKeysOnly();
 		final ArrayList<Entity> entidades = new ArrayList<Entity>();
@@ -30,4 +30,18 @@ public class SalonesUtilidades {
 		}
 		return claves;
 	}
+	
+	public static ArrayList<Entity> listaEntidades(){
+		DatastoreService data = DSF.getDatastoreService();
+		Query q = new Query(Salones.ENTIDAD);
+		final ArrayList<Entity> entidades = new ArrayList<Entity>();
+		data.prepare(q);
+		for (Entity k: data.prepare(q).asIterable()) {
+			// conversion de las entidades a tutoriales
+			entidades.add((Entity)k);
+		}
+		return entidades;
+	}
+	
+	
 }

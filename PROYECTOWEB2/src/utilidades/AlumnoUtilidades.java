@@ -76,11 +76,7 @@ public class AlumnoUtilidades {
 			m.add(x.getNotas().getB4().getL2().getCursos().get(i).getEntity());
 			m.add(x.getNotas().getB4().getL3().getCursos().get(i).getEntity());
 			m.add(x.getNotas().getB4().getL4().getCursos().get(i).getEntity());
-		
 		}
 		data.put(m);
-		
-
 	}
-	
 }
