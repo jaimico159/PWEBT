@@ -17,10 +17,6 @@ public class AlumnoUtilidades {
 	public static void add(String nombres, String ap_paterno,String ap_materno,int dni,String correo,String tipo,boolean condicion,Key salon){
 		Alumno x = new Alumno(nombres,ap_paterno,ap_materno,dni,correo,tipo,condicion,salon);
 		DatastoreService data = DSF.getDatastoreService();
-		DatastoreService data1 = DSF.getDatastoreService();
-		List<Entity> lista1 = new ArrayList<Entity>();
-		List<Entity> lista2 = new ArrayList<Entity>();
-		List<Entity> lista3 = new ArrayList<Entity>();
 		List<Entity> lista4 = new ArrayList<Entity>();
 		List<Entity> lista5 = new ArrayList<Entity>();
 		List<Entity> lista6 = new ArrayList<Entity>();

@@ -6,8 +6,8 @@ public class Administrador extends Persona {
 	public static final String ENTIDAD="ADMINISTRADORES";
 	
 	Entity admin;
-	public Administrador(String nombres, String ap_paterno,String ap_materno,int dni,Correos correo,String cod_admin){
-		super(nombres,ap_paterno,ap_materno,dni,correo);
+	public Administrador(String nombres, String ap_paterno,String ap_materno,int dni,String correo,String tipo, boolean condicion){
+		super(nombres,ap_paterno,ap_materno,dni,correo,tipo,condicion);
 		admin = new Entity(ENTIDAD,super.getEntity().getKey());
 	}
 	

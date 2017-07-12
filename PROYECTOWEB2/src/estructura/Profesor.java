@@ -7,8 +7,8 @@ public class Profesor extends Persona {
 	public static final String ENTIDAD = "PROFESORES";
 	Entity profesor; 
 	
-	public Profesor(String nombres, String ap_paterno,String ap_materno,int dni,Correos correo,String cod_profesor){
-		super(nombres,ap_paterno,ap_materno,dni,correo);
+	public Profesor(String nombres, String ap_paterno,String ap_materno,int dni,String correo,String tipo,boolean condicion){
+		super(nombres,ap_paterno,ap_materno,dni,correo,tipo,condicion);
 		profesor =  new Entity(ENTIDAD,super.getEntity().getKey());
 	}
 	
