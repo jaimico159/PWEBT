@@ -19,7 +19,7 @@
   <div id="header">
     <div class="fl_left">
       <h1><a href="/principal">Profesores Seleccionados</a></h1>
-      <p>La mejor calidad en enseñanza</p>
+      <p>La mejor calidad en enseñanza en la mejor institucion de Arequipa </p>
     </div>
     <div class="fl_right"><img src="logo.jpg" alt="" /></div>
     <br class="clear" />
