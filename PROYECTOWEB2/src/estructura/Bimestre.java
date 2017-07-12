@@ -48,8 +48,6 @@ public class Bimestre {
 		
 	}
 		
-	
-	
 	public Ciencias getC1() {
 		return c1;
 	}
@@ -77,7 +75,4 @@ public class Bimestre {
 	public Entity getEntity(){
 		return bimestre;
 	}
-	
-	
-	
 }	

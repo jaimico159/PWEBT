@@ -1,13 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="com.google.appengine.api.datastore.Key" %>
-<%@ page import="com.google.appengine.api.datastore.Entity" %>
+	pageEncoding="ISO-8859-1"%>
+<%@ page import="utilidades.*"%>
+<%@ page import="estructura.Correos"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Secretario</title>
+<title>NOTAS</title>
 <script src="https://code.jquery.com/jquery-3.2.1.js"
 	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
 	crossorigin="anonymous"></script>
@@ -24,38 +23,28 @@
 <link href="navbar.css" rel="stylesheet">
 </head>
 <body>
-	<form role="form" action="/addSecretario" method="post">
-		<div class="form-group">
-			<label>Nombres </label> <input type="text"
-				class="form-control" id="ejemplo_email_1"
-				placeholder="Introduce los nombres" name="nombres">
-		</div>
-		<div class="form-group">
-			<label>Apellido Paterno </label> <input type="text"
-				class="form-control" id="ejemplo_email_1"
-				placeholder="Introduce Ap. Paterno" name="ap_paterno">
-		</div>
-		<div class="form-group">
-			<label>Apellido Materno </label> <input type="text"
-				class="form-control" id="ejemplo_email_1"
-				placeholder="Introduce Ap. Materno" name="ap_materno">
-		</div>
-		
-		<div class="form-group">
-			<label>DNI:  </label> <input type="text"
-				class="form-control" id="ejemplo_email_1"
-				placeholder="Introduce DNI" name="dni">
-		</div>
-		
+	<% String req = request.getParameter("correo"); %>
+	<% String correo="Ingrese correo"; %>
+	<% Correos pas; %>
+	<% if(req!=null){
+			correo=req;
+			pas=CorreoUtilidades.buscarCorreo(CorreoUtilidades.getEntries(), correo);
+			%>
+	<form role="form" action="/modificarCorreo" method="post">
+		<input type="hidden" value="<%=req %>" name="co">
 		<div class="form-group">
 			<label for="ejemplo_email_1">Email</label> <input type="text"
 				class="form-control" id="ejemplo_email_1"
-				placeholder="Introduce tu email" name="correo">
+				placeholder="<% pas.getCorreo(); %>" name="correo">
 		</div>
 		<div class="form-group">
 			<label for="ejemplo_password_1">Tipo</label><select
 				class="form-control" id="sel1" name="tipo">
+				<option value="administrador">administrador</option>
+				<option value="director">director</option>
 				<option value="secretario">secretario</option>
+				<option value="profesor">profesor</option>
+				<option value="estudiante">estudiante</option>
 			</select>
 		</div>
 		<label class="radio-inline"> <input type="radio"
@@ -63,7 +52,20 @@
 		</label> <label class="radio-inline"> <input type="radio"
 			name="condicion" value="false">Inactivo
 		</label>
+
 		<button type="submit" class="btn btn-default">Enviar</button>
 	</form>
+
+	<% } else { %>
+	<form role="form" action="/editarOption" method="post">
+		<div class="form-group">
+			<label>Correo </label> <input type="text" class="form-control"
+				id="ejemplo_email_1" placeholder="<%=correo%>" name="correo">
+		</div>
+
+		<button type="submit" class="btn btn-default">Enviar</button>
+	</form>
+	<%}%>
+
 </body>
 </html>

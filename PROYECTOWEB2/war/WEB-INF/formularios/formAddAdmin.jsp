@@ -28,23 +28,23 @@
 		<div class="form-group">
 			<label>Nombres </label> <input type="text"
 				class="form-control" id="ejemplo_email_1"
-				placeholder="Introduce los nombres">
+				placeholder="Introduce los nombres" name="nombres">
 		</div>
 		<div class="form-group">
 			<label>Apellido Paterno </label> <input type="text"
 				class="form-control" id="ejemplo_email_1"
-				placeholder="Introduce Ap. Paterno">
+				placeholder="Introduce Ap. Paterno" name="ap_paterno">
 		</div>
 		<div class="form-group">
 			<label>Apellido Materno </label> <input type="text"
 				class="form-control" id="ejemplo_email_1"
-				placeholder="Introduce Ap. Materno">
+				placeholder="Introduce Ap. Materno" name="ap_materno">
 		</div>
 		
 		<div class="form-group">
 			<label>DNI:  </label> <input type="text"
 				class="form-control" id="ejemplo_email_1"
-				placeholder="Introduce DNI">
+				placeholder="Introduce DNI" name="dni">
 		</div>
 		
 		<div class="form-group">
