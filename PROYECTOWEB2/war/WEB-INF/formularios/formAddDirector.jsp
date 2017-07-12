@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Alumno</title>
+<title>Director</title>
 <script src="https://code.jquery.com/jquery-3.2.1.js"
 	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
 	crossorigin="anonymous"></script>
@@ -24,7 +24,7 @@
 <link href="navbar.css" rel="stylesheet">
 </head>
 <body>
-	<form role="form" action="/addAlumno" method="post">
+	<form role="form" action="/addDirector" method="post">
 		<div class="form-group">
 			<label>Nombres </label> <input type="text"
 				class="form-control" id="ejemplo_email_1"
@@ -55,7 +55,7 @@
 		<div class="form-group">
 			<label for="ejemplo_password_1">Tipo</label><select
 				class="form-control" id="sel1" name="tipo">
-				<option value="estudiante">director</option>
+				<option value="director">director</option>
 			</select>
 		</div>
 		<label class="radio-inline"> <input type="radio"

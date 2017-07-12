@@ -1,16 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.google.appengine.api.datastore.Key" %>
+<%@ page import="com.google.appengine.api.datastore.Entity" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-<!DOCTYPE html>
-<html>
-<head>
-<title>Registro de Notas</title>
+<title>Profesor</title>
 <script src="https://code.jquery.com/jquery-3.2.1.js"
 	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
 	crossorigin="anonymous"></script>
@@ -27,52 +24,46 @@
 <link href="navbar.css" rel="stylesheet">
 </head>
 <body>
-	<CENTER>
-<TABLE BORDER>
-<CAPTION ALIGN=bottom>Notas del Alumno</CAPTION>        
-<TR>
-<TD><TH>BIMESTRE 1</TH><TH>BIMESTRE 2</TH><TH>BRIMESTRE 3</TH><TH>BIMESTRE 4</TH><TH>RESULTADO</TH></TD>
-</TR>
-
-<TR ALIGN=CENTER>    
-<TH>MATEMATICAS</TH><TD>11</TD><TD>12</TD><TD>11</TD><TD>15</TD><TD>APROBADO</TD>
-</TR>
-
-<TR ALIGN=CENTER>    
-<TH>LITERATURA</TH><TD>14</TD><TD>16</TD><TD>13</TD><TD>15</TD><TD>APROBADO</TD>
-</TR>
-
-<TR ALIGN=CENTER>    
-<TH>INGLES</TH><TD>10</TD><TD>10</TD><TD>13</TD><TD>7</TD><TD>DESAPROBADO</TD>
-</TR>
-
-<TR ALIGN=CENTER>    
-<TH>RAZ. MATEMATICO</TH><TD>16</TD><TD>18</TD><TD>14</TD><TD>15</TD><TD>APROBADO</TD>
-</TR>
-
-<TR ALIGN=CENTER>    
-<TH>RAZ. VERBAL</TH><TD>17</TD><TD>16</TD><TD>19</TD><TD>20</TD><TD>APROBADO</TD>
-</TR>
-
-<TR ALIGN=CENTER>    
-<TH>EDU. FISICA</TH><TD>20</TD><TD>20</TD><TD>20</TD><TD>20</TD><TD>APROBADO</TD>
-</TR>
-
-<TR ALIGN=CENTER>    
-<TH>FISICA</TH><TD>12</TD><TD>10</TD><TD>4</TD><TD>8</TD><TD>DESAPROBADO</TD>
-</TR>
-
-<TR ALIGN=CENTER>    
-<TH>QUIMICA</TH><TD>13</TD><TD>15</TD><TD>12</TD><TD>11</TD><TD>APROBADO</TD>
-</TR>
-
-<TR ALIGN=CENTER>    
-<TH>HISTORIA</TH><TD>15</TD><TD>13</TD><TD>17</TD><TD>15</TD><TD>APROBADO</TD>
-</TR>
-</TABLE>
-</CENTER>
-</body>
-</html>
-
+	<form role="form" action="/addProfesor" method="post">
+		<div class="form-group">
+			<label>Nombres </label> <input type="text"
+				class="form-control" id="ejemplo_email_1"
+				placeholder="Introduce los nombres">
+		</div>
+		<div class="form-group">
+			<label>Apellido Paterno </label> <input type="text"
+				class="form-control" id="ejemplo_email_1"
+				placeholder="Introduce Ap. Paterno">
+		</div>
+		<div class="form-group">
+			<label>Apellido Materno </label> <input type="text"
+				class="form-control" id="ejemplo_email_1"
+				placeholder="Introduce Ap. Materno">
+		</div>
+		
+		<div class="form-group">
+			<label>DNI:  </label> <input type="text"
+				class="form-control" id="ejemplo_email_1"
+				placeholder="Introduce DNI">
+		</div>
+		
+		<div class="form-group">
+			<label for="ejemplo_email_1">Email</label> <input type="text"
+				class="form-control" id="ejemplo_email_1"
+				placeholder="Introduce tu email" name="correo">
+		</div>
+		<div class="form-group">
+			<label for="ejemplo_password_1">Tipo</label><select
+				class="form-control" id="sel1" name="tipo">
+				<option value="profesor">profesor</option>
+			</select>
+		</div>
+		<label class="radio-inline"> <input type="radio"
+			name="condicion" value="true">Activo
+		</label> <label class="radio-inline"> <input type="radio"
+			name="condicion" value="false">Inactivo
+		</label>
+		<button type="submit" class="btn btn-default">Enviar</button>
+	</form>
 </body>
 </html>

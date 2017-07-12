@@ -5,6 +5,8 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.google.appengine.api.datastore.Key" %>
 <%@ page import="com.google.appengine.api.datastore.Entity" %>
+<%@ page import="com.google.appengine.api.datastore.KeyFactory" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -31,23 +33,23 @@
 		<div class="form-group">
 			<label>Nombres </label> <input type="text"
 				class="form-control" id="ejemplo_email_1"
-				placeholder="Introduce los nombres">
+				placeholder="Introduce los nombres" name="nombres">
 		</div>
 		<div class="form-group">
 			<label>Apellido Paterno </label> <input type="text"
 				class="form-control" id="ejemplo_email_1"
-				placeholder="Introduce Ap. Paterno">
+				placeholder="Introduce Ap. Paterno" name="ap_paterno">
 		</div>
 		<div class="form-group">
 			<label>Apellido Materno </label> <input type="text"
 				class="form-control" id="ejemplo_email_1"
-				placeholder="Introduce Ap. Materno">
+				placeholder="Introduce Ap. Materno" name="ap_materno">
 		</div>
 		
 		<div class="form-group">
 			<label>DNI:  </label> <input type="text"
 				class="form-control" id="ejemplo_email_1"
-				placeholder="Introduce DNI">
+				placeholder="Introduce DNI" name="dni">
 		</div>
 		
 		<div class="form-group">
@@ -70,10 +72,11 @@
 		
 		<div class="form-group">
 			<label for="ejemplo_password_1">Salón: </label>
-			<select class="form-control" id="sel1" name="tipo">
+			<select class="form-control" id="sel1" name="clave">
 				<% if(!salones.isEmpty()){ for(Entity k:salones){%>
-				<% String s = (int)k.getProperty(Salones.GRADO)+(String)k.getProperty(Salones.SECCION); %>				
-				<option value="<%= k.getKey() %>"><%= s %></option>
+				<% long m = (Long)k.getProperty(Salones.GRADO); %>
+				<% String s = m+""+(String)k.getProperty(Salones.SECCION); %>				
+				<option value="<%= KeyFactory.keyToString(k.getKey()) %>"><%= s %></option>
 				<%}} %>
 			</select>
 		</div>

@@ -14,7 +14,7 @@ import com.google.appengine.api.datastore.*;
 import com.google.appengine.api.datastore.Query.*;
 
 public class AlumnoUtilidades {
-	public static void Add(String nombres, String ap_paterno,String ap_materno,int dni,String correo,String tipo,boolean condicion,Key salon){
+	public static void add(String nombres, String ap_paterno,String ap_materno,int dni,String correo,String tipo,boolean condicion,Key salon){
 		Correos y = new Correos(correo,tipo,condicion);
 		Notas w = new Notas();
 		Alumno x = new Alumno(nombres,ap_paterno,ap_materno,dni,correo,tipo,condicion,salon);
