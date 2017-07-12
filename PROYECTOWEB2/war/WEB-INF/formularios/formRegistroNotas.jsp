@@ -33,14 +33,14 @@
         <li><a href="/gmail">Inicio</a></li>
         <li><a href="#">Te ofrecemos</a>
           <ul>
-            <li><a href="/Cursos">Cursos intensivos</a></li>
+            <li><a href="#">Cursos intensivos</a></li>
             <li><a href="/Profesores">Profesores Calificados</a></li>
           </ul>
         </li>
         
         <li><a href="/visita">Visitas</a></li>
-        <li class="active"><a href="/contactanos">ContÃ¡ctanos</a></li>
-        <li class="last"><a href="/trabajo">Trabaja con Nosotros</a></li>
+        <li class="active"><a href="#">ContÃ¡ctanos</a></li>
+        <li class="last"><a href="#">Trabaja con Nosotros</a></li>
       </ul>
     </div>
     <div id="search">
