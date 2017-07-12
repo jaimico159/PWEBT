@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="utilidades.*"%>
-<%@ page import="estructura.Salones"%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.google.appengine.api.datastore.Key" %>
 <%@ page import="com.google.appengine.api.datastore.Entity" %>
@@ -9,8 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Alumno</title>
-<% ArrayList<Entity> salones = SalonesUtilidades.listaEntidades(); %>
+<title>Director</title>
 <script src="https://code.jquery.com/jquery-3.2.1.js"
 	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
 	crossorigin="anonymous"></script>
@@ -27,7 +24,7 @@
 <link href="navbar.css" rel="stylesheet">
 </head>
 <body>
-	<form role="form" action="/addAlumno" method="post">
+	<form role="form" action="/addDirector" method="post">
 		<div class="form-group">
 			<label>Nombres </label> <input type="text"
 				class="form-control" id="ejemplo_email_1"
@@ -58,7 +55,7 @@
 		<div class="form-group">
 			<label for="ejemplo_password_1">Tipo</label><select
 				class="form-control" id="sel1" name="tipo">
-				<option value="estudiante">estudiante</option>
+				<option value="director">director</option>
 			</select>
 		</div>
 		<label class="radio-inline"> <input type="radio"
@@ -66,17 +63,6 @@
 		</label> <label class="radio-inline"> <input type="radio"
 			name="condicion" value="false">Inactivo
 		</label>
-		
-		
-		<div class="form-group">
-			<label for="ejemplo_password_1">Salón: </label>
-			<select class="form-control" id="sel1" name="tipo">
-				<% if(!salones.isEmpty()){ for(Entity k:salones){%>
-				<% String s = (int)k.getProperty(Salones.GRADO)+(String)k.getProperty(Salones.SECCION); %>				
-				<option value="<%= k.getKey() %>"><%= s %></option>
-				<%}} %>
-			</select>
-		</div>
 		<button type="submit" class="btn btn-default">Enviar</button>
 	</form>
 </body>

@@ -23,6 +23,52 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	</servlet-mapping>
 	
 	<servlet>
+		<servlet-name>AddAlumnoServlet</servlet-name>
+		<servlet-class>pw2.AddAlumnoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddAlumnoServlet</servlet-name>
+		<url-pattern>/addAlumno</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AddSalonServlet</servlet-name>
+		<servlet-class>pw2.AddSalonServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddSalonServlet</servlet-name>
+		<url-pattern>/addSalon</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AddProfesorServlet</servlet-name>
+		<servlet-class>pw2.AddProfesorServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddProfesorServlet</servlet-name>
+		<url-pattern>/addProfesor</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AddDirectorServlet</servlet-name>
+		<servlet-class>pw2.AddDirectorServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddDirectorServlet</servlet-name>
+		<url-pattern>/addDirector</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AddAdminServlet</servlet-name>
+		<servlet-class>pw2.AddAdminServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddAdminServlet</servlet-name>
+		<url-pattern>/addAdmin</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
 		<servlet-name>ChoseOptionServlet</servlet-name>
 		<servlet-class>controladores.ChoseOptionServlet</servlet-class>
 	</servlet>

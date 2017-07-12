@@ -76,12 +76,8 @@
 		<!-- Main component for a primary marketing message or call to action -->
 		<div class="container"></div>
 		
-			
-
 	</div>
-		
 		<form role="form" action="/choseOption" method="post">
-		
 		<div class="form-group">
 			<label for="ejemplo_password_1">Tipo</label><select
 				class="form-control" id="sel1" name="opcion">
@@ -102,34 +98,33 @@
 		<jsp:include page="../formularios/formAddAlumno.jsp"></jsp:include>
 		<%}else if(request.getParameter("opcion").equals("addProfesor")){ %>	
 		<br><br><br><br><h3>AGREGAR PROFESOR</h3>
-		<jsp:include page="../formularios/formSearchCorreo.jsp"></jsp:include>
+		<jsp:include page="../formularios/formAddAlumno.jsp"></jsp:include>
 		<br>
 		<a href='"+ us.createLogoutURL("http://1-dot-profar-167808.appspot.com")+"'> Salir </a>
-		<% } %>
 		<%}else if(request.getParameter("opcion").equals("addDirector")){ %>	
 		<br><br><br><br><h3>AGREGAR DIRECTOR</h3>
-		<jsp:include page="../formularios/formSearchCorreo.jsp"></jsp:include>
+		<jsp:include page="../formularios/formAddDirector.jsp"></jsp:include>
 		<br>
 		<a href='"+ us.createLogoutURL("http://1-dot-profar-167808.appspot.com")+"'> Salir </a>
 		<%}else if(request.getParameter("opcion").equals("addSecretario")){ %>	
 		<br><br><br><br><h3>AGREGAR SECRETARIO</h3>
-		<jsp:include page="../formularios/formSearchCorreo.jsp"></jsp:include>
+		<jsp:include page="../formularios/formAddSecretario.jsp"></jsp:include>
 		<br>
 		<a href='"+ us.createLogoutURL("http://1-dot-profar-167808.appspot.com")+"'> Salir </a>
 		<%}else if(request.getParameter("opcion").equals("addAdmin")){ %>	
 		<br><br><br><br><h3>AGREGAR ADMIN</h3>
-		<jsp:include page="../formularios/formSearchCorreo.jsp"></jsp:include>
+		<jsp:include page="../formularios/formAddAdmin.jsp"></jsp:include>
 		<br>
 		<a href='"+ us.createLogoutURL("http://1-dot-profar-167808.appspot.com")+"'> Salir </a>
 		
 		<br><br>
 		<%} else if(request.getParameter("opcion").equals("addSalon")){ %>	
 		<br><br><br><br><h3>AGREGAR SALON</h3>
-		<jsp:include page="../formularios/formSearchCorreo.jsp"></jsp:include>
+		<jsp:include page="../formularios/formAddSalon.jsp"></jsp:include>
 		<br>
 		<a href='"+ us.createLogoutURL("http://1-dot-profar-167808.appspot.com")+"'> Salir </a>
-		<% } %>
-		
+		<% }%>
+	<% } %>
 		
 </body>
 

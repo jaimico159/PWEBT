@@ -29,25 +29,26 @@ public class GmailServlet extends HttpServlet {
 		User user = us.getCurrentUser();
 		Correos elegido;
 		List<Correos> lista = CorreoUtilidades.getEntries();
-		out.println(lista.size());
-		
+		//out.println(lista.size());
 		if(user==null){
 			resp.sendRedirect(us.createLoginURL("/Login.jsp"));
 		}
 		else{
 			System.out.println(user.getEmail());
 			if(user.getEmail().equals("jaimehuarsayarivera@gmail.com") | user.getEmail().equals("jaime.huarsaya.rivera@gmail.com")){
-				req.getRequestDispatcher("/WEB-INF/jsp_inicios/adminoptions.jsp").forward(req, resp);
+				System.out.println("te voy a redirigir");
+				req.getRequestDispatcher("WEB-INF/jsp_inicios/adminoptions.jsp").forward(req, resp);
+				System.out.println("debe redirigir");
 			}else
 			if(lista.isEmpty()){
 				System.out.println("lista vacia causa");
 				resp.sendRedirect("Pagina.html");
 			}
 			else{
-			if(CorreoUtilidades.buscarCorreo(lista,user.getEmail())!=null || user.getEmail().equals(alexandercayromamani@gmail.com)){
+			if(CorreoUtilidades.buscarCorreo(lista,user.getEmail())!=null){
 					elegido=CorreoUtilidades.buscarCorreo(lista,user.getEmail());
-					if(elegido.getTipo().equals("administrador") || user.getEmail().equals(alexandercayromamani@gmail.com){	
-						if(elegido.getCondicion() || user.getEmail().equals(alexandercayromamani@gmail.com){
+					if(elegido.getTipo().equals("administrador")){	
+						if(elegido.getCondicion()){
 							out.println("<!DOCTYPE html>"	 
 									+ "<html>"
 									+ "<head><title>Información de la cuenta</title>"
