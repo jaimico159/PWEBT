@@ -37,7 +37,7 @@
             <li><a href="/Profesores">Profesores Calificados</a></li>
           </ul>
         </li>
-        <li><a href="/pedidos">Pedidos</a></li>
+        
         <li><a href="/visita">Visitas</a></li>
         <li class="active"><a href="/contactanos">ContÃ¡ctanos</a></li>
         <li class="last"><a href="/trabajo">Trabaja con Nosotros</a></li>
