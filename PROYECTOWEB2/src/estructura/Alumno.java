@@ -33,6 +33,11 @@ public class Alumno extends Persona {
 	public Notas getNotas() {
 		return notas;
 	}
+	
+	public Entity getEntity(){
+		return super.getEntity();
+	}
+	
 	public Entity getEntity1(){
 		return alumno;
 	}		

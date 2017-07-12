@@ -15,10 +15,11 @@ public class Persona {
 	
 	Entity persona = new Entity(ENTIDAD);
 	
-	Correos email;
+	private Correos email;
 	
 	public Persona(String nombres, String ap_paterno,String ap_materno,int dni,String correo, String tipo, boolean condicion){
 		email = new Correos(correo,tipo,condicion);
+		
 		persona.setProperty(NOMBRES, nombres);
 		persona.setProperty(AP_PATERNO, ap_paterno);
 		persona.setProperty(AP_PATERNO, ap_materno);

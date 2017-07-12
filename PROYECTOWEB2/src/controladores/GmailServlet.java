@@ -49,30 +49,7 @@ public class GmailServlet extends HttpServlet {
 					elegido=CorreoUtilidades.buscarCorreo(lista,user.getEmail());
 					if(elegido.getTipo().equals("administrador")){	
 						if(elegido.getCondicion()){
-							out.println("<!DOCTYPE html>"	 
-									+ "<html>"
-									+ "<head><title>Información de la cuenta</title>"
-									+ "<meta charset=utf-8;>"
-									+ "<body>"
-									+ "<h1>Información de la Cuenta Google</h1>"
-									+ "<br><a href='../'>Regresar...</a>"
-									+"<br/><b>User :</b>"
-									+"<br/>Nickname: "+user.getNickname()
-									+"<br/>Email: "+user.getEmail()
-									+"<br/><img src='imagenes/rey.jpg'> "
-									+"<br/>"
-									+"<form role='form' action='/choseOption' method='post'>"
-									+"<div class='form-group'>"
-									+"<label for='ejemplo_password_1'>Tipo</label><select"
-									+"class='form-control' id='sel1' name='opcion'>"
-									+"<option value='adminoptions'>Opciones de administrador</option>"
-									+"</select>"
-									+"</div>"
-									+"<button type='submit' class='btn btn-default'>Ir</button>"
-								+"</form>"
-									+"<br/>"
-									+"<a href='"+ us.createLogoutURL("http://1-dot-profar-167808.appspot.com")+"'> Cerrar sesión </a>"
-									+ "</body></html>");
+							req.getRequestDispatcher("/WEB-INF/jsp_inicios/adminoptions.jsp").forward(req, resp);
 						}
 						else{
 							out.println("Su cuenta es de administrador pero está inactiva contactese con "
@@ -91,20 +68,7 @@ public class GmailServlet extends HttpServlet {
 					
 					else if(elegido.getTipo().equals("profesor")){
 						if(elegido.getCondicion()){
-							out.println("<!DOCTYPE html>"	 
-									+ "<html>"
-									+ "<head><title>Información de la cuenta</title>"
-									+ "<meta charset=utf-8;>"
-									+ "<body>"
-									+ "<h1>Información de la Cuenta Google</h1>"
-									+ "<br><a href='../'>Regresar...</a>"
-									+"<br/><b>User :</b>"
-									+"<br/>getNickname retornó : "+user.getNickname()
-									+"<br/>getEmail retornó : "+user.getEmail()
-									+"<br/><img src='imagenes/torre.jpg'> "
-									+"<br/>"
-									+"<a href='"+ us.createLogoutURL("http://1-dot-profar-167808.appspot.com")+"'> Cerrar sesión </a>"
-									+ "</body></html>");
+							req.getRequestDispatcher("/WEB-INF/jsp_inicios/profeoptions.jsp").forward(req, resp);
 						}
 						else{
 							out.println("Su cuenta es de Profesor pero está inactiva contáctese con el admin principal");
@@ -128,6 +92,7 @@ public class GmailServlet extends HttpServlet {
 									+"<br/>"
 									+"<a href='"+ us.createLogoutURL("http://1-dot-profar-167808.appspot.com")+"'> Cerrar sesión </a>"
 									+ "</body></html>");
+							req.getRequestDispatcher("/WEB-INF/jsp_inicios/directoroptions.jsp").forward(req, resp);
 							
 						}
 						else{
@@ -152,6 +117,7 @@ public class GmailServlet extends HttpServlet {
 									+"<br/>"
 									+"<a href='"+ us.createLogoutURL("http://1-dot-profar-167808.appspot.com")+"'> Cerrar sesión </a>"
 									+ "</body></html>");
+							req.getRequestDispatcher("/WEB-INF/jsp_inicios/secreoptions.jsp").forward(req, resp);
 							
 						}
 						else{
