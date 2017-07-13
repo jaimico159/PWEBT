@@ -75,23 +75,7 @@
 
 		<!-- Main component for a primary marketing message or call to action -->
 		<div class="container"></div>
-		
-	</div>
-		<form role="form" action="/choseOption" method="post">
-		<div class="form-group">
-			<label for="ejemplo_password_1">Tipo</label><select
-				class="form-control" id="sel1" name="opcion">
-				<option value="addAlumno">Agregar Alumno</option>
-				<option value="addProfesor">Agregar Profesor</option>
-				<option value="addDirector">Agregar Director</option>
-				<option value="addSecretario">Agregar Secretario</option>
-				<option value="addAdmin">Agregar Admin</option>
-				<option value="addSalon">Agregar Salon</option>
-			</select>
-		</div>
 
-		<button name="ver" value="ver" type="submit" class="btn btn-default">Ir</button>
-	</form>
 	<%if(request.getParameter("opcion")!=null){
 	if(request.getParameter("opcion").equals("ver")){ %>
 		<br><h3>NOTAS</h3>

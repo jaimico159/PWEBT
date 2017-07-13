@@ -99,7 +99,7 @@
 		<jsp:include page="../formularios/formAddAlumno.jsp"></jsp:include>
 		<%}else if(request.getParameter("opcion").equals("addProfesor")){ %>	
 		<br><br><br><br><h3>AGREGAR PROFESOR</h3>
-		<jsp:include page="../formularios/formAddAlumno.jsp"></jsp:include>
+		<jsp:include page="../formularios/formAddProfesor.jsp"></jsp:include>
 		<br>
 		<a href='"+ us.createLogoutURL("http://1-dot-profar-167808.appspot.com")+"'> Salir </a>
 		<%}else if(request.getParameter("opcion").equals("addDirector")){ %>	

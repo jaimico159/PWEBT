@@ -13,9 +13,9 @@ import com.google.appengine.api.datastore.KeyFactory;
 @SuppressWarnings("serial")
 public class AddAdminServlet extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		String nombres=req.getParameter("correo"),ap_paterno=req.getParameter("ap_paterno")
+		String nombres=req.getParameter("nombres"),ap_paterno=req.getParameter("ap_paterno")
 				,ap_materno=req.getParameter("ap_materno"),correo = req.getParameter("correo"),tipo=req.getParameter("tipo");
-		Key clave = KeyFactory.stringToKey(req.getParameter("clave"));
+	//	Key clave = KeyFactory.stringToKey(req.getParameter("clave"));
 		int dni=Integer.parseInt(req.getParameter("dni"));
 		boolean condicion=Boolean.parseBoolean(req.getParameter("condicion"));
 		AdminUtilidades.add(nombres,ap_paterno,ap_materno,dni,correo,tipo,condicion);

@@ -9,7 +9,9 @@ public class DirectorUtilidades {
 	public static void add(String nombres, String ap_paterno,String ap_materno,int dni,String correo,String tipo,boolean condicion){
 		DatastoreService a = DSF.getDatastoreService();
 		Director x = new Director(nombres,ap_paterno,ap_materno,dni,correo,tipo,condicion);
+		a.put(x.getCorreo().getEntity());
 		a.put(x.getEntity());
 		a.put(x.getEntity1());
+		
 	}
 }
