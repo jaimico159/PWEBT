@@ -24,7 +24,19 @@
 <link href="navbar.css" rel="stylesheet">
 </head>
 <body>
-	<form role="form" action="/addSecretario" method="post">
+<script>
+  function validarSiNumero(){
+	  var b = Number(document.getElementById("dni").value);
+	  var numero = parseInt(b);
+    	if (!/(^([0-9]{8,8})|^)$/.test(numero)){
+    	  alert("El valor " + b + " no es un número válido en el campo dni");
+    	  alert("DNI debe tener 8 dígitos de solo números");
+    	  return false;
+    }
+    return true;
+  }
+</script>
+	<form role="form" action="/addSecretario" method="post" onsubmit="return validarSiNumero(this)">
 		<div class="form-group">
 			<label>Nombres </label> <input type="text"
 				class="form-control" id="ejemplo_email_1"
@@ -43,7 +55,7 @@
 		
 		<div class="form-group">
 			<label>DNI:  </label> <input type="text"
-				class="form-control" id="ejemplo_email_1"
+				class="form-control" id="dni"
 				placeholder="Introduce DNI" name="dni">
 		</div>
 		

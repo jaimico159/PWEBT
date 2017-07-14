@@ -29,7 +29,20 @@
 <link href="navbar.css" rel="stylesheet">
 </head>
 <body>
-	<form role="form" action="/addAlumno" method="post">
+<script>
+  function validarSiNumero(){
+	  var b = Number(document.getElementById("dni").value);
+	  var numero = parseInt(b);
+    	if (!/(^([0-9]{8,8})|^)$/.test(numero)){
+    	  alert("El valor " + b + " no es un número válido en el campo dni");
+    	  alert("DNI debe tener 8 dígitos de solo números");
+    	  return false;
+    }
+    return true;
+  }
+</script>
+
+	<form role="form" onsubmit="return validarSiNumero(this)" action="/addAlumno" method="post">
 		<div class="form-group">
 			<label>Nombres </label> <input type="text"
 				class="form-control" id="ejemplo_email_1"
@@ -48,8 +61,9 @@
 		
 		<div class="form-group">
 			<label>DNI:  </label> <input type="text"
-				class="form-control" id="ejemplo_email_1"
-				placeholder="Introduce DNI" name="dni">
+				class="form-control" id="dni"
+				placeholder="Introduce DNI" name="dni"
+				 maxlength="8" size="20" />
 		</div>
 		
 		<div class="form-group">

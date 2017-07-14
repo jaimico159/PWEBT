@@ -39,7 +39,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Project name</a>
+            <a class="navbar-brand" href="#">Sistema de Notas</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -103,7 +103,7 @@
    
     
     <br><br><br><br><br><br>
-    <a href="http://1-dot-profar-167808.appspot.com" onclick="signOut();">Sign out</a>
+    <a href="Pagina.html" onclick="signOut();">Sign out</a>
 <script>
   function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();

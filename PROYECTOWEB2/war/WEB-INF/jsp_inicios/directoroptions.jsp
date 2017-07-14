@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
 <title>Ingreso</title>
@@ -76,33 +77,44 @@
 		<!-- Main component for a primary marketing message or call to action -->
 		<div class="container"></div>
 		
-			
-
 	</div>
-		
 		<form role="form" action="/choseOption" method="post">
-		
 		<div class="form-group">
 			<label for="ejemplo_password_1">Tipo</label><select
 				class="form-control" id="sel1" name="opcion">
-				<option value="agregar">Agregar Correo</option>
-				<option value="editar">Editar Correo</option>
+				<option value="addAlumno">Agregar Alumno</option>
+				<option value="addProfesor">Agregar Profesor</option>
+				
+				<option value="addSecretario">Agregar Secretario</option>
+				
+				<option value="addSalon">Agregar Salon</option>
 			</select>
 		</div>
 
 		<button type="submit" class="btn btn-default">Ir</button>
 	</form>
 	<%if(request.getParameter("opcion")!=null){
-	if(request.getParameter("opcion").equals("agregar")){ %>
-		<br><h3>AGREGAR CORREO</h3>
-		<jsp:include page="../formularios/formAddCorreo.html"></jsp:include>
-		<%}else{ %>
-		
-		<br><br><br><br><h3>MODIFICAR CORREO</h3>
-		<jsp:include page="../formularios/formSearchCorreo.jsp"></jsp:include>
+	if(request.getParameter("opcion").equals("addAlumno")){ %>
+		<br><h3>AGREGAR ALUMNO</h3>
+		<jsp:include page="../formularios/formAddAlumno.jsp"></jsp:include>
+		<%}else if(request.getParameter("opcion").equals("addProfesor")){ %>	
+		<br><br><br><br><h3>AGREGAR PROFESOR</h3>
+		<jsp:include page="../formularios/formAddProfesor.jsp"></jsp:include>
 		<br>
 		<a href='"+ us.createLogoutURL("http://1-dot-profar-167808.appspot.com")+"'> Salir </a>
-		<% } }%>
+		<%}else if(request.getParameter("opcion").equals("addSecretario")){ %>	
+		<br><br><br><br><h3>AGREGAR SECRETARIO</h3>
+		<jsp:include page="../formularios/formAddSecretario.jsp"></jsp:include>
+		<br>
+		<a href='"+ us.createLogoutURL("http://1-dot-profar-167808.appspot.com")+"'> Salir </a>
+		<%} else if(request.getParameter("opcion").equals("addSalon")){ %>	
+		<br><br><br><br><h3>AGREGAR SALON</h3>
+		<jsp:include page="../formularios/formAddSalon.jsp"></jsp:include>
+		<br>
+		<a href='"+ us.createLogoutURL("http://1-dot-profar-167808.appspot.com")+"'> Salir </a>
+		<% }%>
+	<% } %>
+		
 </body>
 
 </html>

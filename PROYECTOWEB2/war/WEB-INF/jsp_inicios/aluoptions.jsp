@@ -76,6 +76,16 @@
 		<!-- Main component for a primary marketing message or call to action -->
 		<div class="container"></div>
 
+	<form role="form" action="/choseOption" method="post">
+		<div class="form-group">
+			<label for="ejemplo_password_1">OPCIONES</label><select
+				class="form-control" id="sel1" name="opcion">
+				<option value="ver">Ver Notas</option>
+			</select>
+		</div>
+
+		<button type="submit" class="btn btn-default">Ir</button>
+	</form>
 	<%if(request.getParameter("opcion")!=null){
 	if(request.getParameter("opcion").equals("ver")){ %>
 		<br><h3>NOTAS</h3>

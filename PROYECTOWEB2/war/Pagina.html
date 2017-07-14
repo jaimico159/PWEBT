@@ -2,20 +2,42 @@
 <html>
 <meta charset="ISO-8859-1">
 <head>
-    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+
+<meta name="google-signin-scope" content="profile email">
+<meta name="google-signin-client_id"
+	content="139878915322-udt6t70orjvs790mgfjph1s8poll1u75.apps.googleusercontent.com">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://code.jquery.com/jquery-3.2.1.js"
+	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+	crossorigin="anonymous"></script>
+<meta charset="utf-8">
+
+
+<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/estilos.css">
   
 </head>
 
-<body class="container" background="imagenes/back.jpg" style="backgroung-attachment: fixed">
+<body class="container" background="imagenes/fondo.jpg" style="backgroung-attachment: fixed">
+
+<script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
+
+
 <nav class="nav nav-pills">
   <button type="button" class="btn btn-default" onclick="window.location.href='QuienesSomos.html'">Quienes Somos</button>
-  <button type="button" class="btn btn-default">Programas educativos</button>
-  <button type="button" class="btn btn-default" onclick="window.location.href='Profesores.html'">Profesores</button>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <button type="button" class="btn btn-default" onclick="window.location.href='Login.jsp'">Registrarse</button>
-  <button type="button" class="btn btn-default" onclick="signOut()">SALIR</button>
+  <button type="button" class="btn btn-default" >Programas educativos</button>
+  <button type="button" class="btn btn-default" onclick="window.location.href='Profesores.html'">Profesores</button> 
+  <button type="button" class="btn btn-default" onclick="window.location.href='Login.jsp'">Login</button>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  
   
   
 </nav>
@@ -36,8 +58,12 @@
   
   </p>
   
-  <p><a class="btn btn-primary btn-lg" href="#" role="button">Logros</a></p>
+  <p><a class="btn btn-primary btn-lg" href="http://colegiofaraday.blogspot.pe/" role="button">Logros</a></p>
+  <a href="Pagina.html" onclick="signOut();">Cerrar Sesi�n</a>
+  
 </div>    
+
+	<div></div>
 
 <!-- Firma y fecha de la página, ¡sólo por cortesía! -->
 <address>Creado el 01 de MARZO del 2016<br>
